@@ -1,0 +1,48 @@
+.footer {
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer__go_up a {
+    display: block;
+    width: 30px;
+    height: 80px;
+    background: #fff;
+    border-radius: 25px;
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    cursor: pointer;
+    @include max(1500) { right: 50px }
+    &:after {
+        content: '';
+        background: url(../../../img/svg/chevron_up.svg) center/contain no-repeat;
+        width: 15px;
+        height: 22px;
+        position: absolute;
+        bottom: 47px;
+        left: auto;
+        right: 7px;
+        transition: .4s;
+    }
+    &:hover:after {
+        bottom: 52px;
+    }
+}
+
+.footer__copyright {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    span {
+        color: #fff;
+        font-size: 1em;
+        margin-right: 1rem;
+    }
+}
