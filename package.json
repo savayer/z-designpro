@@ -64,7 +64,7 @@
         "yargs": "^13.2.4"
     },
     "dependencies": {
-        "masonry-layout": "^4.2.2",
+        "isotope-layout": "^3.0.6",
         "smart-grid": "^2.1.2"
     }
 }
