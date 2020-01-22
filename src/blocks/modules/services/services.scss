@@ -1,0 +1,41 @@
+.services__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.25em;
+    @include md(font-size, 1.75em);
+    @include xs(font-size, 1.5em);
+}
+
+.services__wrapper {
+    @include row-flex();
+    justify-content: center;
+    margin-top: 2.25rem;
+}
+
+.services__item.service {
+    @include col();
+    @include size(4);
+    @include size-xl(6);
+    @include size-md(12);
+    margin-bottom: 2rem;
+    box-shadow: 0 0 70px #ccc;
+}
+
+.service__image {
+    img {
+        width: 100%;
+    }
+}
+.service__content {
+    background: #fff;
+    padding: 1.25rem 2rem 2.5rem;
+}
+.service__title {
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+.service__description {
+    font-size: 1em;
+    font-family: 'Futura', 'Open Sans', sans-serif;
+    margin-top: 1em;
+}

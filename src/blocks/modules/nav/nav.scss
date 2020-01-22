@@ -5,6 +5,9 @@
     padding: 30px 40px;
     height: 100px;
     border-bottom: 1px solid #ccc;
+    @include md(padding, 20px 40px);
+    @include sm(padding, 10px 40px);
+    @include max(480) { padding: 10px 30px; }
 }
 
 .nav__toggle_lang {
@@ -13,7 +16,13 @@
     height: 3em;
     display: flex;
     text-decoration: none;
-    border-radius: 50%;   
+    border-radius: 50%;
+    @include sm(width, 2.5em);
+    @include sm(height, 2.5em);
+    @include xs(width, 2.125em);
+    @include xs(height, 2.125em);
+    @include max(350) { width: 1.8em; height: 1.8em; }
+
     span {
         margin: auto;
         font-size: 1.25em;
@@ -21,12 +30,21 @@
         text-transform: uppercase;
         font-weight: 700; 
         font-family: 'Open Sans';
+        @include sm(font-size, 1em);
+        @include xs(font-size, .9em);
+        @include max(350) { font-size: .8em; }
     }    
 }
 
 .logo {
     img {
         width: 500px;
+        @include lg(width, 460px);
+        @include md(width, 360px);
+        @include sm(width, 300px);
+        @include max(480) { width: 260px }
+        @include xs(width, 220px);
+        @include max(350) { width: 190px }
     }
 }
 
@@ -44,6 +62,8 @@
         transition: .4s;
         border-radius: 4px;
         width: 0;
+        @include max(480) { margin: 5px 0 }
+        @include xs(margin, 4px 0)
     }    
     .bar1 {
         transition: .2s linear;
@@ -58,12 +78,18 @@
     &.load {
         .bar1 {
             width: 30px;
+            @include max(480) { width: 25px; }
+            @include xs(width, 22px)
         }
         .bar2 {
             width: 25px;
+            @include max(480) { width: 20px; }
+            @include xs(width, 17px)
         }
         .bar3 {
             width: 35px;
+            @include max(480) { width: 30px; }
+            @include xs(width, 27px)
         }
     }
 
