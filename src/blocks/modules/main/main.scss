@@ -17,8 +17,8 @@
     cursor: pointer;
     transition: .3s;
     &:hover, &.active-work {
-        border-color: #0d52ff;
-        background-color: #0d52ff;
+        border-color: $active;
+        background-color: $active;
         color: #fff;
     }
 }
@@ -38,11 +38,22 @@
     img {
         width: 100%;
         display: block;
+        transition: .3s;
     }
+    &.blurred img {
+        filter: blur(2px);
+    }    
     &:hover {
         .grid_works__hover {
-            opacity: 0.7;
+            opacity: 1;
             z-index: 1;
+        }
+        img {
+            filter: blur(5px);
+        }
+        .grid_works__more {
+            padding-top: 0;
+            opacity: 1;
         }
     }
 }
@@ -55,10 +66,24 @@
     left: 0;
     opacity: 0;
     z-index: -1;
-    background-color: #0d52ff;
+    background-color: rgba(13, 82, 255, 0.7);
     transition: .3s;
+    display: flex;
     &.hover {
-        opacity: 0.7;
+        opacity: 1;
         z-index: 1;
+    }
+}
+
+.grid_works__more {
+    margin: auto;
+    opacity: 0;
+    padding-top: 30px;
+    transition: .1s linear .2s;
+    a {
+        font-size: 1.75em;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;        
     }
 }

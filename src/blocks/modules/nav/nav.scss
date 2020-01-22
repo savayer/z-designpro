@@ -33,21 +33,56 @@
 .nav__toggle_menu {
     cursor: pointer;
     direction: rtl;
+    width: 35px;
     @include max(840) {
         display: block;
     }
     .bar1, .bar2, .bar3 {
-        width: 35px;
         height: 4px;
         background-color: #000;
         margin: 6px 0;        
         transition: .4s;
         border-radius: 4px;
-    }
+        width: 0;
+    }    
     .bar1 {
-        width: 30px;
+        transition: .2s linear;
     }
     .bar2 {
-        width: 25px;
+        transition: .2s linear .2s;
+    }
+    .bar3 {
+        transition: .3s linear .4s;
+    }
+
+    &.load {
+        .bar1 {
+            width: 30px;
+        }
+        .bar2 {
+            width: 25px;
+        }
+        .bar3 {
+            width: 35px;
+        }
+    }
+
+    &:hover {
+        .bar1 {
+            animation: hover_on_bar .15s linear forwards
+        }
+        .bar2 {
+            animation: hover_on_bar .15s linear .15s forwards
+        }
+        .bar3 {
+            animation: hover_on_bar .15s linear .3s forwards
+        }
+    }
+}
+
+@keyframes hover_on_bar {
+    to {
+        margin-right: 2px;
+        background-color: $active;
     }
 }

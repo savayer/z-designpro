@@ -31,7 +31,5 @@ window.addEventListener('load', function () {
 
         let filterValue = e.target.getAttribute('data-filter')
         iso.arrange({ filter: filterValue })
-    });
-
-    
+    });    
 })

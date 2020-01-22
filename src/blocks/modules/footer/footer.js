@@ -24,7 +24,8 @@ if (goUp) {
         animateScroll();
     }
 
-    goUp.addEventListener('click', () => {
-        scrollTo(document.body, 0, 1250);
+    goUp.addEventListener('click', e => {
+        e.preventDefault()
+        scrollTo(document.documentElement, 0, 1000);
     })
 }
