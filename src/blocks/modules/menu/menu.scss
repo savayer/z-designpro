@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 30%;
     height: 100%;
     background: #fff;
     transition: .8s;
@@ -10,10 +10,16 @@
     padding: 1.5rem 2.75rem;
     box-shadow: -2rem 0 2.5rem rgba(30, 5, 71, 0.35);
     z-index: 100;
-    filter: blur(0);
     &.active {
         transform: translateX(0);
     }
+    @include min(1500) { width: 500px; }
+    @include max(1400) { width: 35%; }
+    @include xl(width, 40%);
+    @include lg(width, 50%);
+    @include md(width, 65%);
+    @include sm(width, 75%);
+    @include xs(width, 95%);
 }
 
 .menu_wrapper__close {
@@ -65,5 +71,10 @@
         display: inline-block;
         vertical-align: middle;
         margin-right: 1.5rem;
+        width: 28px;
+        height: 27px;
+        @include sm(margin-right, 1rem)
     }
+    @include sm(font-size, 1.25em)
+    @include xs(font-size, 1.125em)
 }
