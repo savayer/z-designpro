@@ -1,0 +1,41 @@
+.single_post__wrapper {
+    background: #fff;
+    box-shadow: 0 50px 100px 40px #ccc;
+}
+
+.single_post__image {
+    margin-top: 5rem;
+    padding: 1rem 1rem 0 1rem;
+    img {
+        width: 100%;
+    }
+}
+
+.single_post__title {
+    font-family: 'FuturaBold';
+    font-size: 1.5em;
+    text-transform: uppercase;    
+    margin-top: 3rem;
+}
+
+.single_post__content_wrapper {
+    padding: 0 4rem 4rem 4rem;
+}
+
+.single_post__content {
+    column-count: 2;
+    column-gap: 2em;
+    margin-top: 1em;
+    p {
+        margin-top: 0;
+    }
+    &, &  * {
+        font-family: 'Futura';
+        font-size: 1.125em;
+        line-height: 1.25;
+    }
+}
+
+.single_post__date {
+    margin-top: 2rem;
+}
