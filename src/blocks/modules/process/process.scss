@@ -1,0 +1,80 @@
+.process__wrapper {
+    @include row-flex();
+    max-width: 80%;
+    margin: 2.25rem auto 0;
+    @include min(1920) { max-width: 1550px; }
+    @include max(1700) { max-width: 90%; }
+    @include max(1500) { max-width: 70%; }
+    @include max(1300) { max-width: 80%; }
+    @include max(1100) { max-width: 90%; }
+    @include lg(max-width, 95%);
+    @include max(900) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.process__item.p {
+    padding: 2rem 1.5rem 2rem 0;
+    @include col();
+    @include size(4);
+    @include max(1500) { @include size(6) }
+    @include max(900) { @include size(8) }
+    @include max(800) { @include size(10) }
+    @include max(600) { @include size(12) }
+    display: flex;    
+    align-items: flex-start;
+    background: #fff;
+    box-shadow: 0 0 80px #ccc;
+    margin-bottom: 2rem;
+    @include max(1500) { padding: 1.5rem 1.5rem 2rem 0; }
+}
+
+.p__img {
+    align-self: center;
+    img {
+        @include max(450) { width: 120px; }
+        @include xs(width, 100px);
+    }
+}
+
+.p__content {
+    margin-left: 1.5rem;
+    padding-top: 2rem;
+    @include max(450) {
+        padding-top: 0;
+        margin-left: 1.125rem;
+    }    
+}
+
+.p__title {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    @include max(450) { font-size: 1.25em }
+    @include xs(font-size, 1.1em);
+    @include max(350) { font-size: 1em }
+}
+
+.p__description {
+    font-size: 1em;
+    font-family: 'Futura', 'Open Sans', sans-serif;
+    margin-top: 1em;
+}
+
+.process__logos {
+    @include row-flex();
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;    
+    max-width: 80%;
+    margin: 4rem auto 0;
+    @include min(1920) { max-width: 1550px; }
+    @include max(1700) { max-width: 90%; }
+    @include max(1500) { display: none; }
+}
+
+.logos__image {
+    img {
+        max-height: 80px;
+    }
+}

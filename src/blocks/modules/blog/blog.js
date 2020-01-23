@@ -3,11 +3,14 @@ const calcHeight = () => {
         return
     }
     const blog = document.querySelector('.blog__wrapper')
+    if (!blog) {
+        return;
+    }
     const blogPostsCount = blog.childElementCount
     const maxPostsInColumn = Math.ceil(blogPostsCount / 2)    
     let postsOfTheColumn
     let finalHeight = 0
-
+    
     postsOfTheColumn = maxPostsInColumn % 2 === 0
         ? document.querySelectorAll('.blog__post--column1')
         : postsOfTheColumn = document.querySelectorAll('.blog__post--column2')    
