@@ -84,3 +84,14 @@ h3,.h3 {
     @include md(font-size, 1.75em);
     @include xs(font-size, 1.5em);
 }
+
+.order_here a {
+    position: fixed;
+    top: 300px;
+    right: 0;
+    background: url(../../img/blog/order_here.png) center/contain no-repeat;
+    font-size: 0;
+    width: 67px;
+    height: 125px;
+    @include max(1400) { display: none; }
+}
