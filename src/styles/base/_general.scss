@@ -95,3 +95,23 @@ h3,.h3 {
     height: 125px;
     @include max(1400) { display: none; }
 }
+
+.close_icon {
+    width: 60px;
+    margin-top: -10px;
+    &:hover {
+        .close_icon__cross {
+            opacity: 0;
+        }
+        .close_icon__minus {
+            opacity: 1;
+        }
+    }
+}
+.close_icon__cross {
+    transition: .1s linear;
+}
+.close_icon__minus {
+    transition: .1s linear;
+    opacity: 0;
+}

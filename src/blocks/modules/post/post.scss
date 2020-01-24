@@ -1,6 +1,7 @@
 .single_post__wrapper {
     background: #fff;
     box-shadow: 0 50px 100px 40px #ccc;
+    position: relative;
 }
 
 .single_post__image {
@@ -38,4 +39,11 @@
 
 .single_post__date {
     margin-top: 2rem;
+}
+
+.single_post__close {
+    position: absolute;
+    right: -60px;
+    top: 0;
+    cursor: pointer;
 }

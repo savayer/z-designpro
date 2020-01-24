@@ -65,6 +65,7 @@
     },
     "dependencies": {
         "isotope-layout": "^3.0.6",
-        "smart-grid": "^2.1.2"
+        "smart-grid": "^2.1.2",
+        "snapsvg-cjs": "0.0.6"
     }
 }
