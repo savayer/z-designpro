@@ -6,6 +6,15 @@
     z-index: -1;
     width: 100%;
     height: 100vh;
+    &.modal--contact .modal__form{
+        @include min(1900) { width: 700px; }
+        @include xl(width, 50%);
+        @include lg(width, 60%);
+        @include md(width, 70%);
+        @include sm(width, 80%);
+        @include max(450) { width: 90% }
+        @include xs(width, 100%);
+    }
     &.showed {
         opacity: 1;
         z-index: 1000;
@@ -47,6 +56,7 @@
     overflow: -moz-scrollbars-none;
     @include max(1600) { width: 65% }
     @include max(1350) { width: 55% }
+    @include lg(width, 50%);
     @include max(800) { display: none; }
 }
 .modal__clients_content {
@@ -54,7 +64,6 @@
     padding-top: 20%;
     max-width: 70%;
     @include max(1350) { max-width: 90% }
-    @include max(1220) { padding-left: 50px; }
     transition: .2s;    
 }
 .modal__clients_title {
@@ -78,7 +87,10 @@
 .modal__logos {
     margin-top: 5rem;
     img {
-        width: 100%;
+        width: 100%;        
+        margin: auto;
+        display: block;
+        @include xl(width, 80%);        
     }
 }
 
@@ -97,19 +109,24 @@
     
     @include max(1600) { width: 35% }
     @include max(1350) { width: 45% }
-    @include max(800) { width: 60% }
-    @include max(600) { width: 70% }
-    @include max(500) { width: 80% }
-    @include max(350) { width: 90% }
+    @include lg(width, 50%);
+    @include max(800) { width: 65% }
+    @include max(650) { width: 75% }
+    @include max(600) { width: 80% }
+    @include max(500) { width: 100% }    
 }
 
 .modal__content {
     position: relative;
     padding: 2rem 5rem;
+    @include xl(padding, 2rem 3rem);
+    @include max(500) { padding: 2rem; }
     img {
         max-width: 100%;
         display: block;
         margin: auto;
+        @include xl(width, 85%);
+        @include xs(width, 100%);
     }
 }
 
@@ -130,6 +147,7 @@
 }
 
 .modal__close {
+    cursor: pointer;
     .close_icon__cross,
     .close_icon__minus,
     .close_icon__arc {
@@ -158,9 +176,15 @@
     display: flex;
     justify-content: flex-start;
     margin: 2rem -0.5rem 0;
+    @include max(500) {
+        flex-wrap: wrap;
+    }
 }
 
 .about__button {    
+    @include max(500) {
+        width: 100%;
+    }
     background: #fff;
     border: 2px solid #f05b6e;
     border-radius: 40px;
@@ -172,7 +196,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin: 0 .5rem;
+    margin: 0 .5rem .75rem;
     &:hover .about__button_arrow {
         animation: move .7s ease;
     }

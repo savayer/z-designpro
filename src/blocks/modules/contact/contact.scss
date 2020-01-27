@@ -1,4 +1,4 @@
-.contact {
+/* .contact {
     position: fixed;
     top: 0;
     right: 0;
@@ -53,13 +53,17 @@
 .contact__body {
     padding: 2rem;        
 }
+*/
+.contact {
+    padding: 0 2rem;
+}
 
 .contact__form {
     width: 70%;
     @include xl(width, 75%);
     @include sm(width, 80%);
     @include xs(width, 100%);
-    margin: auto;
+    margin: 2rem auto 0;
     input, textarea {
         width: 100%;
         border: none;

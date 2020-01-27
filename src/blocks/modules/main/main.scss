@@ -2,7 +2,7 @@
     list-style: none;
     @include row-flex();
     justify-content: center;
-    padding: 2.5rem 0 1.5rem;
+    padding: 2rem 1rem 1.5rem;
     background: #fff;
     position: fixed;
     top: 168px;
@@ -13,6 +13,16 @@
     &.shadow {
         box-shadow: 0 2px 6px #b9b9b9;
     }
+    @include lg-block {
+        top: 159px;
+        padding: 1.5rem 1rem;
+    }
+    @include md(top, 119px);
+    @include sm-block {
+        top: 100px;
+        padding: 1.25rem .8rem;
+    }
+    @include xs(padding, 0.5rem);    
 }
 
 .nav_works__item {
@@ -31,6 +41,11 @@
         background-color: $active;
         color: #fff;
     }
+    @include md(font-size, 1.125em);
+    @include max(500) {
+        font-size: 1em;
+    }
+    @include xs(padding, 0.4em 0.7em);
 }
 
 .grid_works {
@@ -44,6 +59,8 @@
 .grid_works__item {
     @include col();
     @include size(4);
+    @include size-lg(6);
+    @include size-sm(12);
     margin: 0.9375rem;
     position: relative;
     transition: .3s;

@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const setGridMarginTop = () => {
         const grid = document.querySelector('.grid_works')
         if (grid) {
-            grid.style.marginTop = navWorks.clientHeight + nav.clientHeight + 40+ 'px'
+            if (document.documentElement.clientWidth >= 992) {
+                grid.style.marginTop = navWorks.clientHeight + nav.clientHeight + 40 + 'px'
+            } else {
+                grid.style.marginTop = navWorks.clientHeight + nav.clientHeight + 'px'
+            }
         }
     }
 

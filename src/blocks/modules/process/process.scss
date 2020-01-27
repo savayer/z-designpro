@@ -1,5 +1,7 @@
 .process {
     margin-top: calc(168px + 3.125rem);
+    @include md(margin-top, calc(168px + 0.125rem));
+    @include sm(margin-top, 140px);
 }
 
 .process__wrapper {
