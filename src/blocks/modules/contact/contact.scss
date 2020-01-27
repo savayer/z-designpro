@@ -60,7 +60,7 @@
     @include sm(width, 80%);
     @include xs(width, 100%);
     margin: auto;
-    input {
+    input, textarea {
         width: 100%;
         border: none;
         border-bottom: 2px solid #1e0547;
@@ -71,6 +71,10 @@
         &::placeholder {
             color: #1e0547;
         }
+    }
+    textarea {
+        max-height: 4.5em;
+        resize: vertical;
     }
     button {
         width: 100%;
