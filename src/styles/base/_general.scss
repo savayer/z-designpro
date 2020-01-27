@@ -24,6 +24,9 @@ body {
     font-family: 'FuturaBold', 'Open Sans', sans-serif;
     font-size: 16px;
     overflow-x: hidden;
+    &.ptop {
+        padding-top: 168px;
+    }
 }
 
 .overflow-hidden {

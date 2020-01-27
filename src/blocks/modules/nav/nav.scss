@@ -5,9 +5,19 @@
     padding: 30px 40px;
     min-height: 100px;
     border-bottom: 1px solid #ccc;
+    background: #fff;
     @include md(padding, 20px 40px);
     @include sm(padding, 10px 40px);
     @include max(480) { padding: 10px 30px; }
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: .2s;
+    &.shadow {
+        box-shadow: 0 4px 20px #bababa;
+    }
 }
 
 .nav__toggle_lang {

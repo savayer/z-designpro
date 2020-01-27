@@ -2,7 +2,17 @@
     list-style: none;
     @include row-flex();
     justify-content: center;
-    margin: 2.5rem 0 1.5rem;
+    padding: 2.5rem 0 1.5rem;
+    background: #fff;
+    position: fixed;
+    top: 168px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    transition: .2s;
+    &.shadow {
+        box-shadow: 0 2px 6px #b9b9b9;
+    }
 }
 
 .nav_works__item {
@@ -28,6 +38,7 @@
     max-width: 95%;
     margin: auto;
     overflow: hidden;
+    margin-top: 360px;
 }
 
 .grid_works__item {
@@ -35,6 +46,7 @@
     @include size(4);
     margin: 0.9375rem;
     position: relative;
+    transition: .3s;
     img {
         width: 100%;
         display: block;
