@@ -27,6 +27,11 @@
     background: #fff;
     box-shadow: 0 0 80px #ccc;
     margin-bottom: 2rem;
+    transition: .2s;
+    cursor: url(../../../img/cursor.png), pointer;
+    &:hover {
+        transform: scale(1.02);
+    }
     @include max(1500) { padding: 1.5rem 1.5rem 2rem 0; }
 }
 

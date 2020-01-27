@@ -11,6 +11,11 @@
     @include size-md(12);
     margin-bottom: 2rem;
     box-shadow: 0 0 70px #ccc;
+    transition: .2s;
+    &:hover {
+        transform: scale(1.02);
+    }
+    cursor: url(../../../img/cursor.png), pointer;
 }
 
 .service__image {
