@@ -18,20 +18,10 @@
     &.showed {
         opacity: 1;
         z-index: 1000;
-        /* .m-form__title span {
-            padding-top: 0;
-        }
-        .m-form__input_wrapper, .m-form__label,
-        .m-form__group--2, .m-form__group--3,.m-form__button {
+        .contact__group, .contact__button {
             padding-top: 0;
             opacity: 1;
         }
-        .m-form__list_item {
-            padding-top: 0;
-            &:before {
-                transform: translateY(0);
-            }
-        } */
     }
 }
 

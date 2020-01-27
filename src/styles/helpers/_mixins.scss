@@ -9,3 +9,18 @@
         @content;
     }
 }
+
+@mixin transitionProp {
+    transition: 1s;
+    @include max(350) {
+        transition: .8s;
+    }
+}
+
+@mixin transitionPadding($height) {
+    max-height: $height;
+    overflow: hidden;
+    padding-top: $height/1.5;
+    opacity: 0;
+    @include transitionProp;
+}
