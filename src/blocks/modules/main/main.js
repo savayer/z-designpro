@@ -5,7 +5,8 @@ window.addEventListener('load', function () {
     if (grid) {
         const iso = new Isotope(grid, {
             itemSelector: '.grid_works__item',
-            layoutMode: 'masonry'
+            layoutMode: 'masonry',
+            transitionDuration: 0
         })
     
         const matchesSelector = (el, selector) => {

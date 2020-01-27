@@ -1,3 +1,7 @@
+.services {
+    margin-top: calc(168px + 3.125rem);
+}
+
 .services__wrapper {
     @include row-flex();
     justify-content: center;

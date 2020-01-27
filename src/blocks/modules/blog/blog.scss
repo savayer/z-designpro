@@ -1,3 +1,7 @@
+.blog {
+    margin-top: calc(168px + 3.125rem);
+}
+
 .blog__wrapper {
     @include row-flex();
     flex-direction: column;

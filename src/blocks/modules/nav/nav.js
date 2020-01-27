@@ -5,6 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav')
     const navWorks = document.querySelector('.nav_works')
 
+    const setGridMarginTop = () => {
+        const grid = document.querySelector('.grid_works')
+        if (grid) {
+            grid.style.marginTop = navWorks.clientHeight + nav.clientHeight + 40+ 'px'
+        }
+    }
+
+    setGridMarginTop()
+
+    window.addEventListener('resize', () => {
+        setGridMarginTop()
+    })
+
     window.addEventListener('scroll', function() {    
         if (location.pathname === '/') {
             if (this.scrollY > 0) {
@@ -17,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nav.classList.add('shadow')
             } else {
                 nav.classList.remove('shadow')
-            }            
+            }
         }
     })
 })

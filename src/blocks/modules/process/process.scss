@@ -1,3 +1,7 @@
+.process {
+    margin-top: calc(168px + 3.125rem);
+}
+
 .process__wrapper {
     @include row-flex();
     max-width: 80%;
@@ -11,7 +15,7 @@
     @include max(900) {
         flex-direction: column;
         align-items: center;
-    }
+    }    
 }
 
 .process__item.p {

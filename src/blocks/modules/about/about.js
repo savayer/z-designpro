@@ -55,8 +55,8 @@ if ($links && $modal) {
                 overlaySpeed = 250
                 formSpeed = 600
             } else {
-                overlaySpeed = 650
-                formSpeed = 1150
+                overlaySpeed = 600
+                formSpeed = 1100
             }
 
             animateOverlay($modalOverlay, overlaySpeed)
