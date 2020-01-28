@@ -1,7 +1,25 @@
+.single_post {
+    margin-top: calc(168px + 3.125rem);
+    @include md(margin-top, calc(168px + 0.125rem));
+    @include sm(margin-top, 140px);
+    @include max(500) {
+        margin-top: 100px;
+    }
+    .container {
+        @include max(500) {
+            padding: 0;
+        }
+    }
+}
+
 .single_post__wrapper {
     background: #fff;
     box-shadow: 0 50px 100px 40px #ccc;
     position: relative;
+    @include max(1400) {
+        margin: 0 6rem;
+    }
+    @include lg(margin, 0);
 }
 
 .single_post__image {
@@ -10,6 +28,9 @@
     img {
         width: 100%;
     }
+    @include max(500) {
+        padding: 0;
+    }
 }
 
 .single_post__title {
@@ -17,14 +38,18 @@
     font-size: 1.5em;
     text-transform: uppercase;    
     margin-top: 3rem;
+    @include xs(margin-top, 2rem);
 }
 
 .single_post__content_wrapper {
     padding: 0 4rem 4rem 4rem;
+    @include sm(padding, 0 2rem 4rem 2rem);
+    @include xs(padding, 0 1rem 2rem 1rem);
 }
 
 .single_post__content {
     column-count: 2;
+    @include md(column-count, 1);
     column-gap: 2em;
     margin-top: 1em;
     p {
@@ -34,11 +59,13 @@
         font-family: 'Futura';
         font-size: 1.125em;
         line-height: 1.25;
+        @include xs(font-size, 1.05em);
     }
 }
 
 .single_post__date {
     margin-top: 2rem;
+    @include xs(margin-top, 1rem);
 }
 
 .single_post__close {
@@ -46,4 +73,5 @@
     right: -60px;
     top: 0;
     cursor: pointer;
+    @include lg(display, none);
 }
