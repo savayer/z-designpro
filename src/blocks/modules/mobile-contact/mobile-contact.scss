@@ -1,0 +1,19 @@
+.contact__header {
+    background-color: #467aff;
+    padding: 1.125rem 2rem;
+}
+
+.contact__title {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+}
+.contact__form {
+    @include max(500) {
+        width: 100%;
+    }
+}
+.contact__body {
+    padding: 0 4rem;
+    @include xs(padding, 0 2rem)
+}

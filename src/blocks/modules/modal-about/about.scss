@@ -166,13 +166,13 @@
     display: flex;
     justify-content: flex-start;
     margin: 2rem -0.5rem 0;
-    @include max(500) {
+    @include max(550) {
         flex-wrap: wrap;
     }
 }
 
 .about__button {    
-    @include max(500) {
+    @include max(550) {
         width: 100%;
     }
     background: #fff;
@@ -187,6 +187,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 .5rem .75rem;
+    position: relative;
     &:hover .about__button_arrow {
         animation: move .7s ease;
     }
@@ -220,9 +221,12 @@
 
 .about__button_container {
     height: 100%;
-    overflow: hidden;
-    margin-left: 15px;
     height: 18px;
+    margin-left: 12px;
+    @include max(550) {
+        position: absolute;
+        right: 12px;
+    }
 }
 
 .about__button_arrow {
@@ -231,26 +235,10 @@
 }
 
 @keyframes move {
-    0% {
-        transform: translate(0)
-    }
-    25% {
-        transform: translate(50%);
-        opacity: .5;
+    0%, 100% {
+        transform: translateX(0)
     }
     50% {
-        transform: translate(110%);
-        opacity: 0;
-    }
-    51% {
-        transform: translate(-110%);
-    }
-    60% {
-        transform: translate(-50%);
-        opacity: .5;
-    }
-    100% {
-        transform: translate(0);
-        opacity: 1;
+        transform: translateX(7px);
     }
 }

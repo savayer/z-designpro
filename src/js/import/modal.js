@@ -22,16 +22,25 @@ function animateOverlay(el, dur, easing = 'linear', close = false, closeOverlay 
 
 function setClickEventByModalToggleButton($button, modalSelector) {
     const $modal = document.querySelector(modalSelector)
+    if (!$modal) return
     const $modalForm = $modal.querySelector('.modal__form')
     const $modalOverlay = $modal.querySelector('.modal__overlay')
     const $closeButton = $modal.querySelector('.modal__close')
+        
+    $button.addEventListener('click', openModal)
 
-    $button.addEventListener('click', e => {
+    $closeButton.addEventListener('click', () => {
+        animateOverlay($modalOverlay, 500, '', true, true)
+        animateOverlay($modalForm, 350, '', true)
+        document.body.classList.remove('overflow-hidden');
+    })
+
+    function openModal(e) {
         e.preventDefault()
         $modal.classList.add('showed')
-
+    
         let overlaySpeed, formSpeed;
-
+    
         if (document.documentElement.clientWidth <= 700) {
             overlaySpeed = 550
             formSpeed = 800
@@ -39,19 +48,26 @@ function setClickEventByModalToggleButton($button, modalSelector) {
             overlaySpeed = 600
             formSpeed = 1100
         }
-
+    
         if (document.documentElement.clientWidth > 500) {
             animateOverlay($modalOverlay, overlaySpeed)
         }
         animateOverlay($modalForm, formSpeed, 'easeOutQuad')
         document.body.classList.add('overflow-hidden');
-    })
-    $closeButton.addEventListener('click', () => {
-        animateOverlay($modalOverlay, 500, '', true, true)
-        animateOverlay($modalForm, 350, '', true)
-        document.body.classList.remove('overflow-hidden');
+    }
+
+    function removeEventsModal() {
+        if (document.documentElement.clientWidth <= 500) {
+            document.querySelectorAll('[data-modal]').forEach(link => {
+                link.removeEventListener('click', openModal)
+            })
+        }
+    }
+    removeEventsModal()
+    
+    window.addEventListener('resize', () => {
+        removeEventsModal()
     })
 }
-
 setClickEventByModalToggleButton(document.querySelector('[data-modal="about"]'), '.modal--about')
 setClickEventByModalToggleButton(document.querySelector('[data-modal="contact"]'), '.modal--contact')

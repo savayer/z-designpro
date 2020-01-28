@@ -1,13 +1,29 @@
-.contact {
-    padding: 0 2rem;
+.modal--contact {
+    .contact {
+        padding: 0 2rem;
+    }
 }
 
-.contact__group {
-    @include transitionPadding(81px);
+.page_contact {
+    .contact {
+        margin-top: 168px;
+        @include lg(margin-top, 159px);
+        @include md(margin-top, 119px);
+        @include sm(margin-top, 100px);
+    }
 }
 
-.contact__button {
-    @include transitionPadding(90px);
+body:not(.page_contact) {
+    .contact__group {
+        @include min(501) {
+            @include transitionPadding(81px);
+        }
+    }
+    .contact__button {
+        @include min(501) {
+            @include transitionPadding(90px);
+        }
+    }
 }
 
 .contact__form {

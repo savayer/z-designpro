@@ -1,0 +1,20 @@
+.about {
+    width: 100%;
+    margin-top: calc(168px + 3.125rem);
+    @include md(margin-top, calc(168px + 0.125rem));
+    @include sm(margin-top, 140px);
+}
+.about__header {
+    margin-bottom: 2rem;
+}
+.about__title {
+    text-align: center;
+    font-size: 2.5em;
+}
+.about__body {
+    padding: 0 2rem;
+    @include xs(padding, 0 1rem);
+    img {
+        width: 100%;
+    }
+}
