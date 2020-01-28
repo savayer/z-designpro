@@ -80,9 +80,12 @@
         img {
             filter: blur(5px);
         }
-        .grid_works__more {
-            padding-top: 0;
-            opacity: 1;
+        .grid_works__link {
+            transform: translateY(0);
+            opacity: 1;            
+        }
+        use {
+            animation: drawLine .2s ease-in .3s forwards;
         }
     }
 }
@@ -106,11 +109,43 @@
 
 .grid_works__more {
     margin: auto;
-    opacity: 0;
-    padding-top: 30px;
+    text-align: center;
+    position: relative;
+    svg {
+        width: 130%;
+        position: absolute;
+        left: -32px;
+        right: 0;
+        bottom: -32px;
+        margin: auto;
+        @include sm-block {
+            left: -26px;
+            bottom: -26px;
+        }
+    }
+    use {
+        fill: transparent;
+        stroke: #fff;
+        stroke-width: 1.5px;
+        stroke-dashoffset: 400;
+        stroke-dasharray: 400;
+    }
+}
+
+@keyframes drawLine {    
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.grid_works__link {
+    opacity: 0;    
+    transform: translateY(30px);
     transition: .1s linear .2s;
     a {
         font-size: 1.75em;
+        @include xl(font-size, 1.5em);
+        @include md(font-size, 1.25em);
         text-transform: uppercase;
         color: #fff;
         text-decoration: none;        
