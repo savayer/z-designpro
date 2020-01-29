@@ -116,19 +116,18 @@
         position: absolute;
         left: -32px;
         right: 0;
-        bottom: -32px;
+        bottom: -24px;
         margin: auto;
         @include sm-block {
             left: -26px;
-            bottom: -26px;
+            bottom: -16px;
         }
     }
     use {
         fill: transparent;
         stroke: #fff;
-        stroke-width: 1.5px;
-        stroke-dashoffset: 400;
-        stroke-dasharray: 400;
+        stroke-dashoffset: -300;
+        stroke-dasharray: 300;
     }
 }
 
@@ -142,6 +141,8 @@
     opacity: 0;    
     transform: translateY(30px);
     transition: .1s linear .2s;
+    position: relative;
+    z-index: 2;
     a {
         font-size: 1.75em;
         @include xl(font-size, 1.5em);

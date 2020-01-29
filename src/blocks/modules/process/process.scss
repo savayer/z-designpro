@@ -43,9 +43,12 @@
 
 .p__img {
     align-self: center;
-    img {
+    img, svg {
         @include max(450) { width: 120px; }
         @include xs(width, 100px);
+    }
+    svg {
+        width: 140px;
     }
 }
 
@@ -88,4 +91,9 @@
     img {
         max-height: 80px;
     }
+}
+
+path.animate_line {    
+    stroke-dasharray: 500;
+    stroke-dashoffset: -500;    
 }
