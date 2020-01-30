@@ -2,6 +2,14 @@
     margin-top: calc(168px + 3.125rem);
     @include md(margin-top, calc(168px + 0.125rem));
     @include sm(margin-top, 140px);
+    &.loaded {
+        @for $i from 1 through 6 {
+            .animate_line--#{$i} {
+                $t: $i - 1;
+                animation: drawLine .5s linear 0.5s*$t forwards;
+            }
+        }
+    }
 }
 
 .process__wrapper {
@@ -93,7 +101,9 @@
     }
 }
 
-path.animate_line {    
-    stroke-dasharray: 500;
-    stroke-dashoffset: -500;    
+@for $i from 1 through 6 {
+    .animate_line--#{$i} {    
+        stroke-dasharray: 500;
+        stroke-dashoffset: -500;    
+    }
 }

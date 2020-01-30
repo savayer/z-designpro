@@ -7,5 +7,8 @@ import './blur'
 import './modal'
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('loaded')
+    const process = document.querySelector('.process')
+    if (process) {
+        process.classList.add('loaded')
+    }
 })

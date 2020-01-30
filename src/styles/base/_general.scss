@@ -24,9 +24,6 @@ body {
     font-family: 'FuturaBold', 'Open Sans', sans-serif;
     font-size: 16px;
     overflow-x: hidden;
-    &.loaded path.animate_line {
-        animation: drawLine 1s ease-in forwards;
-    }
 }
 
 .overflow-hidden {
