@@ -138,14 +138,13 @@
 
 .modal__close {
     cursor: pointer;
-    .close_icon__cross,
-    .close_icon__minus,
+    .line1, .line2,
     .close_icon__arc {
-        fill: #fff;
+        stroke: #fff !important;
     }
     .close_icon__arc {
         transform: rotate(82deg) translate(1px, 2px);
-        transform-origin: center;
+        transform-origin: 40% 48%;
     }
 }
 
