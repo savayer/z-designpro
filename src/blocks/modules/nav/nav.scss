@@ -2,11 +2,10 @@
     @include row-flex();
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px;
+    padding: 20px 40px;
     min-height: 100px;
     border-bottom: 1px solid #ccc;
     background: #fff;
-    @include md(padding, 20px 40px);
     @include sm(padding, 10px 40px);
     @include max(480) { padding: 10px 30px; }
     position: fixed;
@@ -24,10 +23,10 @@
                 width: 280px;
             }
             .nav__toggle_lang {
-                width: 2.5em;
-                height: 2.5em;
+                width: 2.25em;
+                height: 2.25em;
                 span {
-                    font-size: 1.125em;
+                    font-size: .9em;
                 }
             }
         }
@@ -35,39 +34,54 @@
     }
 }
 
+.nav--home {
+    position: static;
+    &.no-border {
+        border-color: transparent;
+    }
+    &.offset_lang {
+        .nav__toggle_lang, .nav__toggle_menu {
+            position: fixed;
+            left: 25px;
+            top: 30px;
+            z-index: 1000;
+        }
+        .nav__toggle_menu {
+            left: auto;
+            right: 25px;
+        }
+    }
+}
+
 .nav__toggle_lang {
-    transition: .3s linear;
     background: #000;
-    width: 3em;
-    height: 3em;
+    width: 2.5em;
+    height: 2.5em;
     display: flex;
     text-decoration: none;
     border-radius: 50%;
-    @include sm(width, 2.5em);
-    @include sm(height, 2.5em);
     @include xs(width, 2.125em);
     @include xs(height, 2.125em);
     @include max(350) { width: 1.8em; height: 1.8em; }
 
     span {
-        transition: .3s linear;
+        transition: .2s linear;
         margin: auto;
-        font-size: 1.25em;
+        font-size: 1em;
         color: #fff;
         text-transform: uppercase;
         font-weight: 700; 
         font-family: 'Open Sans';
-        @include sm(font-size, 1em);
         @include xs(font-size, .9em);
         @include max(350) { font-size: .8em; }
     }    
 }
 
 .logo {
+    margin: auto;
     img {
-        transition: .3s linear;
-        width: 500px;
-        @include lg(width, 460px);
+        transition: .2s linear;
+        width: 440px;
         @include md(width, 360px);
         @include sm(width, 300px);
         @include max(480) { width: 260px }
@@ -77,6 +91,7 @@
 }
 
 .nav__toggle_menu {
+    
     cursor: pointer;
     direction: rtl;
     width: 35px;
@@ -105,17 +120,17 @@
 
     &.load {
         .bar1 {
-            width: 30px;
+            width: 28px;
             @include max(480) { width: 25px; }
             @include xs(width, 22px)
         }
         .bar2 {
-            width: 25px;
+            width: 23px;
             @include max(480) { width: 20px; }
             @include xs(width, 17px)
         }
         .bar3 {
-            width: 35px;
+            width: 32px;
             @include max(480) { width: 30px; }
             @include xs(width, 27px)
         }

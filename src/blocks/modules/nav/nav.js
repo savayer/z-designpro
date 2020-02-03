@@ -2,18 +2,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.getElementById('toggle_menu')
     menu.classList.add('load')
 
-    const nav = document.querySelector('.nav')
+    const navInner = document.querySelector('.nav--inner')
+    const navHome = document.querySelector('.nav--home')
     const navWorks = document.querySelector('.nav_works')
+    const navLang = document.querySelector('.nav__toggle_lang')
+    let offset
+    if (navWorks) {
+        offset = navWorks.offsetTop
+    }
 
     const setGridMarginTop = () => {
         const grid = document.querySelector('.grid_works')
         if (grid) {
-            if (document.documentElement.clientWidth >= 992) {
-                grid.style.marginTop = navWorks.clientHeight + nav.clientHeight + 40 + 'px'
-            } else {
-                grid.style.marginTop = navWorks.clientHeight + nav.clientHeight + 'px'
+            if (document.documentElement.clientWidth >= 992 && navWorks.classList.contains('fixed')) {
+                grid.style.marginTop = navWorks.clientHeight + 'px'
             }
         }
+    }
+
+    const deleteMarginTop = () => {
+        document.querySelector('.grid_works').style.marginTop = 'auto'
     }
 
     setGridMarginTop()
@@ -22,18 +30,36 @@ document.addEventListener('DOMContentLoaded', () => {
         setGridMarginTop()
     })
 
-    window.addEventListener('scroll', function() {    
-        if (location.pathname === '/') {
-            if (this.scrollY > 0) {
-                navWorks.classList.add('shadow')
-            } else {
-                navWorks.classList.remove('shadow')
+    window.addEventListener('scroll', function() {
+        if (this.scrollY > 0) {
+            if (navInner) {
+                navInner.classList.add('shadow')
             }
-        } else {            
-            if (this.scrollY > 0) {
-                nav.classList.add('shadow')
+            if (navHome) {
+                navHome.classList.add('no-border')
+            }
+        } else {
+            if (navHome) {
+                navHome.classList.remove('no-border')
+            }
+            if (navInner) {
+                navInner.classList.remove('shadow')
+            }
+        }
+
+        if (this.scrollY >= 18 && navHome) {
+            navHome.classList.add('offset_lang')
+        } else {
+            navHome.classList.remove('offset_lang')
+        }
+
+        if (navWorks) {
+            if (this.scrollY >= offset-12) {
+                navWorks.classList.add('fixed', 'shadow')
+                setGridMarginTop()
             } else {
-                nav.classList.remove('shadow')
+                navWorks.classList.remove('fixed', 'shadow')
+                deleteMarginTop()
             }
         }
     })

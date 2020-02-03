@@ -24,3 +24,9 @@
     opacity: 0;
     @include transitionProp;
 }
+
+@mixin marginTop() {
+    margin-top: calc(#{$offsetTop} + 3.125rem);
+    @include md(margin-top, calc(#{$offsetTop} + 1.325rem));
+    @include sm(margin-top, $offsetTop);
+}

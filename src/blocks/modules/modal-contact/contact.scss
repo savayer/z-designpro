@@ -6,8 +6,7 @@
 
 .page_contact {
     .contact {
-        margin-top: 168px;
-        @include lg(margin-top, 159px);
+        margin-top: 135px;
         @include md(margin-top, 119px);
         @include sm(margin-top, 100px);
     }

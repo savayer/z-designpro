@@ -146,6 +146,21 @@
         transform: rotate(82deg) translate(1px, 2px);
         transform-origin: 40% 48%;
     }
+    .line1, .line2 {
+        transform: translateY(-2px);
+    }
+    .line1 {
+        animation: returnRotate2 .2s linear .1s forwards;
+    }
+    .line2 {
+        animation: returnRotate2 .2s linear .1s forwards;
+    }
+}
+
+@keyframes returnRotate {
+    to {
+        transform: rotate(0) translateY(-2px);
+    }
 }
 
 .about__content {

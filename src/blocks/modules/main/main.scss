@@ -2,16 +2,18 @@
     list-style: none;
     @include row-flex();
     justify-content: center;
-    padding: 2rem 1rem 1.5rem;
+    padding: 1.5rem;
     background: #fff;
-    position: fixed;
-    top: 168px;
-    left: 0;
-    right: 0;
-    z-index: 999;
     transition: .2s;
     &.shadow {
         box-shadow: 0 2px 6px #b9b9b9;
+    }
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
     }
     @include lg-block {
         top: 159px;
@@ -22,7 +24,7 @@
         top: 100px;
         padding: 1.25rem .8rem;
     }
-    @include xs(padding, 0.5rem);    
+    @include xs(padding, 0.5rem);        
 }
 
 .nav_works__item {
@@ -31,8 +33,8 @@
     font-family: 'Open Sans';
     border-radius: 2em;
     border: 2px solid #000000;
-    font-size: 1.375em;
-    padding: .5em 1em;
+    font-size: 1.125em;
+    padding: .35em 1em;
     margin: .4em .5em;
     cursor: pointer;
     transition: .3s;
@@ -53,7 +55,6 @@
     max-width: 95%;
     margin: auto;
     overflow: hidden;
-    margin-top: 287px;
 }
 
 .grid_works__item {
