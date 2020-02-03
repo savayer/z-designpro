@@ -68,10 +68,25 @@
     @include xs(margin-top, 1rem);
 }
 
-.single_post__close {
+.single_post__aside {
     position: absolute;
-    right: -60px;
-    top: 0;
+    right: -100px;
+    top: 2px;
+    width: 35px;
+    height: 100%;
     cursor: pointer;
     @include lg(display, none);
+    &.sticky {
+        position: fixed;
+        top: 130px;
+        right: 12%;
+    }
+    a {
+        /* position: sticky;
+        top: 150px; элементы дергаются при прокрутке и navbar улетает при открытии меню, потому что для sticky надо убрать overflow у wrapper */
+    }
+}
+
+.single_post__close {
+    width: 100%;
 }

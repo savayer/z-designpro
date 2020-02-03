@@ -17,10 +17,26 @@
     transition: .2s;
     &.shadow {
         box-shadow: 0 4px 20px #bababa;
+        @include min(576) {
+            padding: 5px 40px;
+            min-height: 80px;
+            img {
+                width: 280px;
+            }
+            .nav__toggle_lang {
+                width: 2.5em;
+                height: 2.5em;
+                span {
+                    font-size: 1.125em;
+                }
+            }
+        }
+        @include xs(min-height, 70px);
     }
 }
 
 .nav__toggle_lang {
+    transition: .3s linear;
     background: #000;
     width: 3em;
     height: 3em;
@@ -34,6 +50,7 @@
     @include max(350) { width: 1.8em; height: 1.8em; }
 
     span {
+        transition: .3s linear;
         margin: auto;
         font-size: 1.25em;
         color: #fff;
@@ -48,6 +65,7 @@
 
 .logo {
     img {
+        transition: .3s linear;
         width: 500px;
         @include lg(width, 460px);
         @include md(width, 360px);
