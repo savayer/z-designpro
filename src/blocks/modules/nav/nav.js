@@ -11,11 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
         offset = navWorks.offsetTop
     }
 
-    const setGridMarginTop = () => {
+    const setGridMarginTop = (mobile = false) => {
         const grid = document.querySelector('.grid_works')
         if (grid) {
-            if (document.documentElement.clientWidth >= 992 && navWorks.classList.contains('fixed')) {
-                grid.style.marginTop = navWorks.clientHeight + 'px'
+            if (!mobile) {
+                if (document.documentElement.clientWidth >= 992 && navWorks.classList.contains('fixed')) {
+                    grid.style.marginTop = navWorks.clientHeight + 'px'
+                }
+            } else {
+                grid.style.marginTop = navHome.clientHeight + navWorks.clientHeight + 'px'
             }
         }
     }
@@ -47,20 +51,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        if (this.scrollY >= 18 && navHome) {
-            navHome.classList.add('offset_lang')
-        } else {
-            navHome.classList.remove('offset_lang')
-        }
-
-        if (navWorks) {
-            if (this.scrollY >= offset-12) {
-                navWorks.classList.add('fixed', 'shadow')
-                setGridMarginTop()
+        if (document.documentElement.clientWidth >= 769) {
+            if (this.scrollY >= 18 && navHome) {
+                navHome.classList.add('offset_lang')
             } else {
-                navWorks.classList.remove('fixed', 'shadow')
-                deleteMarginTop()
+                navHome.classList.remove('offset_lang')
             }
+            if (navWorks) {            
+                if (this.scrollY >= offset-12) {
+                    navWorks.classList.add('fixed', 'shadow')
+                    setGridMarginTop()
+                } else {
+                    navWorks.classList.remove('fixed', 'shadow')
+                    deleteMarginTop()
+                }
+            }
+        } else {
+            if (this.scrollY > 0 && navWorks) {
+                navWorks.classList.add('mobile-offset')
+            } else {
+                navWorks.classList.remove('mobile-offset')
+            }
+            setGridMarginTop(true)
         }
     })
 })

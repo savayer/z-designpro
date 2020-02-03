@@ -2,7 +2,7 @@
     list-style: none;
     @include row-flex();
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.5rem 5.5rem;
     background: #fff;
     transition: .2s;
     &.shadow {
@@ -15,16 +15,23 @@
         right: 0;
         z-index: 999;
     }
-    @include lg-block {
-        top: 159px;
-        padding: 1.5rem 1rem;
+    &.mobile-offset {
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        padding: 0 1rem 0.75rem 1rem;
+        width: 101%;
+        justify-content: flex-start;
     }
-    @include md(top, 119px);
-    @include sm-block {
-        top: 100px;
-        padding: 1.25rem .8rem;
+    @include md-block {
+        padding: 0.75rem 1rem;
+        position: fixed;
+        top: 119px;
+        left: 0;
+        right: 0;
+        z-index: 999;
     }
-    @include xs(padding, 0.5rem);        
+    @include sm(top, 100px);
 }
 
 .nav_works__item {
@@ -43,7 +50,6 @@
         background-color: $active;
         color: #fff;
     }
-    @include md(font-size, 1.125em);
     @include max(500) {
         font-size: 1em;
     }
@@ -55,6 +61,7 @@
     max-width: 95%;
     margin: auto;
     overflow: hidden;
+    @include md(margin-top, 235px);
 }
 
 .grid_works__item {
