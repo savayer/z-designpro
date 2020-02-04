@@ -52,10 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (document.documentElement.clientWidth >= 769) {
-            if (this.scrollY >= 18 && navHome) {
-                navHome.classList.add('offset_lang')
-            } else {
-                navHome.classList.remove('offset_lang')
+            if (navHome) {
+                if (this.scrollY >= 18) {
+                    navHome.classList.add('offset_lang')
+                } else {
+                    navHome.classList.remove('offset_lang')
+                }                
             }
             if (navWorks) {            
                 if (this.scrollY >= offset-12) {
@@ -67,10 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         } else {
-            if (this.scrollY > 0 && navWorks) {
-                navWorks.classList.add('mobile-offset')
-            } else {
-                navWorks.classList.remove('mobile-offset')
+            if (navWorks) {
+                if (this.scrollY > 0) {
+                    navWorks.classList.add('mobile-offset')
+                } else {
+                    navWorks.classList.remove('mobile-offset')
+                }
             }
             setGridMarginTop(true)
         }

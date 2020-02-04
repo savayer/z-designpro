@@ -4,7 +4,7 @@
         @for $i from 1 through 6 {
             .animate_line--#{$i} {
                 $t: $i - 1;
-                animation: drawLine .5s linear 0.5s*$t forwards;
+                animation: drawLine .7s linear 0.35s*$t forwards;
             }
         }
     }
@@ -40,7 +40,7 @@
     box-shadow: 0 0 80px #ccc;
     margin-bottom: 2rem;
     transition: .2s;
-    cursor: url(../../../img/cursor.png), pointer;
+    cursor: url(../../../img/svg/cursor.svg), pointer;
     &:hover {
         transform: scale(1.02);
     }
@@ -82,20 +82,14 @@
 }
 
 .process__logos {
-    @include row-flex();
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: nowrap;    
-    max-width: 80%;
-    margin: 4rem auto 0;
-    @include min(1920) { max-width: 1550px; }
-    @include max(1700) { max-width: 90%; }
-    @include max(1500) { display: none; }
+
 }
 
 .logos__image {
+    display: block;
+    width: 100%;
     img {
-        max-height: 80px;
+        width: 100%;
     }
 }
 
@@ -104,4 +98,8 @@
         stroke-dasharray: 500;
         stroke-dashoffset: -500;    
     }
+}
+
+.process__title--clients {
+    margin-top: 4rem;
 }
