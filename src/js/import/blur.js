@@ -30,4 +30,3 @@ const blurOnHover = selector => {
 blurOnHover('.services__item')
 blurOnHover('.process__item')
 blurOnHover('.post__wrapper')
-blurOnHover('.grid_works__item')

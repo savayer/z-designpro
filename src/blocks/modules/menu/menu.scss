@@ -7,7 +7,7 @@
     background: #fff;
     transition: .8s;
     transform: translateX(200%);
-    padding: 1.5rem 2.75rem;
+    padding: 1.5rem 0;
     box-shadow: -2rem 0 2.5rem rgba(30, 5, 71, 0.35);
     z-index: 100;
     overflow: auto;
@@ -25,14 +25,15 @@
 
 .menu_wrapper__close {
     cursor: pointer;
-    padding-left: 13px;
+    display: inline-block;
+    margin-left: 3.5rem;
 }
 
 .menu {
     list-style: none;
     margin-top: 1.75rem;
     li {
-        /* padding: 1.5rem 1rem; */
+        padding: 0 2.75rem;
         &.active {
             background: $active;
             a {
