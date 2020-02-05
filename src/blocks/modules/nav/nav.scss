@@ -96,9 +96,12 @@
     
     cursor: pointer;
     direction: rtl;
-    width: 35px;
+    width: 35px;    
     @include max(840) {
         display: block;
+    }
+    @include max(500) {
+        width: auto;
     }
     .bar1, .bar2, .bar3 {
         height: 4px;

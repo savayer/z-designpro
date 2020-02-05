@@ -1,6 +1,6 @@
-const blurOnHover = selector => {
+const blurOnHover = (selector, cb) => {
     const items = document.querySelectorAll(selector)
-
+    
     items.forEach(item => {
         item.addEventListener('mouseenter', function() {
             this.classList.add('hover')
@@ -10,6 +10,9 @@ const blurOnHover = selector => {
         item.addEventListener('mouseleave', function() {            
             this.classList.remove('hover')
             unBlurAll()
+            if (cb) {
+                cb()
+            } 
         })
     })
 
@@ -28,5 +31,12 @@ const blurOnHover = selector => {
 }
 
 blurOnHover('.services__item')
-blurOnHover('.process__item')
+blurOnHover('.process__item', function() {
+    document.querySelector('.process__wrapper').addEventListener('mouseleave', function() {
+        this.closest('.process').classList.remove('loaded')
+        setTimeout(() => {
+            this.closest('.process').classList.add('loaded')
+        }, 0)
+    })    
+})
 blurOnHover('.post__wrapper')
