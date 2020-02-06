@@ -244,6 +244,7 @@
 .about__button {    
     @include max(550) {
         width: 100%;
+        padding: .75em .75em .75em 1em;
     }
     background: #fff;
     border: 2px solid #f05b6e;
@@ -286,7 +287,10 @@
     font-size: 1em;
     line-height: 1;
     font-weight: 800;
-    font-family: 'Open Sans', sans-serif;    
+    font-family: 'Open Sans', sans-serif;
+    @include max(550) {
+        font-size: 1.375em;
+    }
 }
 
 .about__button_container {
@@ -296,12 +300,18 @@
     @include max(550) {
         position: absolute;
         right: 12px;
+        height: 22px;
     }
 }
 
 .about__button_arrow {
     display: block;
     transition: .3s;
+    svg {
+        @include max(550) {
+            height: 22px;
+        }
+    }
 }
 
 @keyframes move {
