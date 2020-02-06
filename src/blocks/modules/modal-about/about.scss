@@ -108,11 +108,7 @@
         @include xl(width, 80%);
     }
 }
-.show-clients {
-    .about__team {
-        display: none !important;
-    }
-}
+
 .about__team {
     display: none;
     margin-top: 3rem;

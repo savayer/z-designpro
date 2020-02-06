@@ -4,7 +4,7 @@
         @for $i from 1 through 6 {
             .animate_line--#{$i} {
                 $t: $i - 1;
-                animation: drawLine .7s linear 0.35s*$t forwards;
+                animation: drawLine .7s linear 0.2s*$t forwards;
             }
         }
     }
