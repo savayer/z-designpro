@@ -43,6 +43,10 @@
                 transition: .5s 1.4s;
             }
         }
+        .modal__logos {
+            opacity: 1;
+            transition: .5s 1s;
+        }
     }
 }
 
@@ -92,6 +96,22 @@
     display: block;
     margin: 1.25rem auto 0;    
     @include animatePaddingTop(40px);
+}
+.modal__logos {
+    opacity: 0;
+    margin-top: 2rem;
+    img {
+        width: 100%;        
+        max-width: 500px;
+        margin: auto;
+        display: block !important;
+        @include xl(width, 80%);
+    }
+}
+.show-clients {
+    .about__team {
+        display: none !important;
+    }
 }
 .about__team {
     display: none;
@@ -246,6 +266,7 @@
         width: 100%;
         padding: .75em .75em .75em 1em;
     }
+    @include max(340) { padding: .6em .75em .6em 1em; }
     background: #fff;
     border: 2px solid #f05b6e;
     border-radius: 40px;
@@ -291,6 +312,8 @@
     @include max(550) {
         font-size: 1.375em;
     }
+    @include max(385) { font-size: 1.125em; }
+    @include max(340) { font-size: 1em; }
 }
 
 .about__button_container {
@@ -302,15 +325,17 @@
         right: 12px;
         height: 22px;
     }
+    @include max(385) { height: 18px; }
+    @include max(340) { height: 16px; }
 }
 
 .about__button_arrow {
     display: block;
     transition: .3s;
     svg {
-        @include max(550) {
-            height: 22px;
-        }
+        @include max(550) { height: 22px; }
+        @include max(385) { height: 18px; }
+        @include max(340) { height: 16px; }
     }
 }
 
