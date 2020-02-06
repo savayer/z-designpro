@@ -33,6 +33,9 @@ function setClickEventByModalToggleButton($button, modalSelector) {
         animateOverlay($modalOverlay, 500, '', true, true)
         animateOverlay($modalForm, 350, '', true)
         document.body.classList.remove('overflow-hidden');
+        if (modalSelector === '.modal--about') {
+            $('.modal__logos').slick('unslick')
+        }
     })
 
     function openModal(e) {
