@@ -25,6 +25,14 @@
     @include transitionProp;
 }
 
+@mixin animatePaddingTop($height) {
+    max-height: $height;
+    overflow: hidden;
+    padding-top: $height/1.5;
+    opacity: 0;
+}
+
+
 @mixin marginTop() {
     margin-top: calc(#{$offsetTop} + 3.125rem);
     @include md(margin-top, calc(#{$offsetTop} + 1.325rem));

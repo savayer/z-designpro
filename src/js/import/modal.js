@@ -1,6 +1,6 @@
 import $ from 'jquery'
 import '../../../node_modules/jquery-ui/ui/effect'
-
+import 'slick-carousel'
 function animateOverlay(el, dur, easing = 'linear', close = false, closeOverlay = false) {
     let fake = {}
 
@@ -38,7 +38,21 @@ function setClickEventByModalToggleButton($button, modalSelector) {
     function openModal(e) {
         e.preventDefault()
         $modal.classList.add('showed')
-    
+        if (modalSelector === '.modal--about') {
+            setTimeout(function() {
+                $('.modal__logos').slick({
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    fade: true,
+                    cssEase: 'linear',
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 1500
+                })
+            }, 500)
+        }
         let overlaySpeed, formSpeed;
     
         if (document.documentElement.clientWidth <= 700) {
