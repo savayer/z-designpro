@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import '../../../node_modules/jquery-ui/ui/effect'
 import 'slick-carousel'
+
 function animateOverlay(el, dur, easing = 'linear', close = false, closeOverlay = false) {
     let fake = {}
 
@@ -70,6 +71,12 @@ function setClickEventByModalToggleButton($button, modalSelector) {
             animateOverlay($modalOverlay, overlaySpeed)
         }
         animateOverlay($modalForm, formSpeed, 'easeOutQuad')
+        setTimeout(() => {
+            $closeButton.classList.add('animate_in_modal')
+            setTimeout(() => {
+                $closeButton.classList.remove('animate_in_modal')
+            }, 600)
+        }, 500)
         document.body.classList.add('overflow-hidden');
     }
 

@@ -106,7 +106,7 @@ h3,.h3 {
 
 .close_icon {
     width: 40px;
-    &:hover {
+    &:hover, &.animate, &.animate_in_modal {
         .close_icon__arc {
             stroke-dasharray: 100;
             stroke-dashoffset: 100;
@@ -121,6 +121,14 @@ h3,.h3 {
             transform-origin: 30% 50%;
             transform: rotate(45deg);
             animation: returnRotate .2s linear .1s forwards;
+        }
+    }
+    &.animate_in_modal {
+        .line1 {
+            animation: returnRotate2 .2s linear .1s forwards;
+        }
+        .line2 {
+            animation: returnRotate2 .2s linear .1s forwards;
         }
     }
 }
