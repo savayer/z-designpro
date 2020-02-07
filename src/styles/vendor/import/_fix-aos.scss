@@ -1,0 +1,6 @@
+$aos-mini-distance: 35px !default;
+$aos-middle-distance: 50px !default;
+
+[data-aos="fade-up-mini"] {
+    transform: translate3d(0, $aos-mini-distance, 0);
+}

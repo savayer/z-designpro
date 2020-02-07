@@ -1,10 +1,12 @@
 .process {
     @include marginTop();
     &.loaded {
-        @for $i from 1 through 6 {
-            .animate_line--#{$i} {
-                $t: $i - 1;
-                animation: drawLine .7s linear 0.2s*$t forwards;
+        @include min(901) {
+            @for $i from 1 through 6 {
+                .animate_line--#{$i} {
+                    $t: $i - 1;
+                    animation: drawLine .7s linear 0.2s*$t forwards;
+                }
             }
         }
     }
@@ -45,6 +47,17 @@
         transform: scale(1.02);
     }
     @include max(1500) { padding: 1.5rem 1.5rem 2rem 0; }
+
+    @include max(900) {
+        &.aos-animate {
+            @for $i from 1 through 6 {
+                .animate_line--#{$i} {
+                    $t: $i - 1;
+                    animation: drawLine .7s+$t/10 linear forwards;
+                }
+            }
+        }
+    }
 }
 
 .p__img {
@@ -79,10 +92,6 @@
     font-size: 1em;
     font-family: 'Futura', 'Open Sans', sans-serif;
     margin-top: 1em;
-}
-
-.process__logos {
-
 }
 
 .logos__image {

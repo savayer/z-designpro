@@ -64,6 +64,7 @@
         "yargs": "^13.2.4"
     },
     "dependencies": {
+        "aos": "^2.3.4",
         "isotope-layout": "^3.0.6",
         "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",

@@ -2,3 +2,5 @@
 @import "import/smart-grid";
 @import "import/slick";
 @import "import/slick_theme";
+@import "../../../node_modules/aos/src/sass/aos.scss";
+@import "import/fix-aos";

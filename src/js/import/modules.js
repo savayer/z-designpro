@@ -7,3 +7,4 @@ import "%modules%/post/post";
 import "%modules%/footer/footer"
 import './blur'
 import './modal'
+import './aos'
