@@ -21,6 +21,9 @@ const blurOnHover = (selector, hideOnMobile = false, cb) => {
 
     const blurAll = () => {
         document.querySelectorAll(selector).forEach(item => {
+            if (selector === '.logos__image') {
+                item.classList.add('hover_js')
+            }
             if (!item.classList.contains('hover')) {
                 item.classList.add('light_blurred')
             }
@@ -28,13 +31,13 @@ const blurOnHover = (selector, hideOnMobile = false, cb) => {
     }
     const unBlurAll = () => {
         document.querySelectorAll(selector).forEach(item => {
-            item.classList.remove('light_blurred')
+            item.classList.remove('light_blurred', 'hover_js')
         })
     }
 }
 
 blurOnHover('.services__item')
-blurOnHover('.process__item', false, function() {
+blurOnHover('.process__item', true, function() {
     document.querySelector('.process__wrapper').addEventListener('mouseleave', function() {
         this.closest('.process').classList.remove('loaded')
         setTimeout(() => {
@@ -43,3 +46,4 @@ blurOnHover('.process__item', false, function() {
     })    
 })
 blurOnHover('.post__wrapper', true)
+blurOnHover('.logos__image')

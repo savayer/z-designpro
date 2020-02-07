@@ -23,6 +23,11 @@ body:not(.page_contact) {
             @include transitionPadding(90px);
         }
     }
+    .contact__phone {
+        @include min(501) {
+            @include transitionPadding(80px);
+        }
+    }
 }
 
 .contact__form {
@@ -90,6 +95,7 @@ body:not(.page_contact) {
     font-family: "Open Sans", sans-serif;
     font-size: 1em;
     text-align: center;
+    display: none;
 }
 
 .contact__phone {

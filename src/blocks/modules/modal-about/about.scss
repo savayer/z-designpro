@@ -18,9 +18,10 @@
     &.showed {
         opacity: 1;
         z-index: 1000;
-        .contact__group, .contact__button {
+        .contact__group, .contact__button, .contact__phone {
             padding-top: 0;
             opacity: 1;
+            transition: 1.5s;
         }
         .modal__team_title, .modal__team_hr {
             padding-top: 0;
