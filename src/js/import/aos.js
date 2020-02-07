@@ -1,5 +1,8 @@
 import AOS from 'aos'
 
-AOS.init({
-    disable: () => document.documentElement.clientWidth > 900
-})
+if (document.documentElement.clientWidth <= 900) {
+    document.querySelectorAll('.process__item').forEach(item => {
+        item.setAttribute('data-aos','fade-up-mini')
+    })
+    AOS.init()
+}
