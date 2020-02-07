@@ -11,6 +11,10 @@
     @include max(500) {
         overflow: initial;
     }
+    transition: opacity .6s;
+    &.none {
+        opacity: 0;
+    }
 }
 
 .footer__go_up a {
@@ -53,9 +57,8 @@
         color: #fff;
         font-size: 1em;
         text-align: center;
-        @include max(500) {
-            font-size: 1.25em;
-        }
+        @include max(500) { font-size: 1.25em; }
+        @include xs(font-size, 1.125em);
         &:nth-child(1) {
             @include max(500) {
                 display: block;

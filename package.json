@@ -65,6 +65,7 @@
     },
     "dependencies": {
         "aos": "^2.3.4",
+        "imagesloaded": "^4.1.4",
         "isotope-layout": "^3.0.6",
         "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",

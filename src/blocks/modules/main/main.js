@@ -1,14 +1,21 @@
 import Isotope from 'isotope-layout'
+import imagesLoaded from 'imagesloaded'
 
-window.addEventListener('load', function () {
-    const grid = document.querySelector('.grid_works')
-    if (grid) {
+const grid = document.querySelector('.grid_works')
+if (grid) {
+    imagesLoaded(grid, () => {
         const iso = new Isotope(grid, {
             itemSelector: '.grid_works__item',
             layoutMode: 'masonry',
-            transitionDuration: 0,
+            filter: '.w-web',
+            hiddenStyle: {
+                opacity: 0
+            },
+            visibleStyle: {
+                opacity: 1
+            }
         })
-    
+
         const matchesSelector = (el, selector) => {
             var p = Element.prototype;
             var f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
@@ -33,6 +40,16 @@ window.addEventListener('load', function () {
     
             let filterValue = e.target.getAttribute('data-filter')
             iso.arrange({ filter: filterValue })
-        });    
-    }
+            
+                grid.classList.add('animate-items')
+            
+            setTimeout(() => {
+                grid.classList.remove('animate-items')
+            }, 300)
+        });
+    })
+}
+
+window.addEventListener('load', () => {
+    document.querySelector('.footer').classList.remove('none')
 })
