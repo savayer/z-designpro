@@ -85,6 +85,9 @@
     @include size(4);
     @include size-lg(6);
     @include size-sm(12);
+    &.big-z-index {
+        z-index: 9999;
+    }
     margin: 0.9375rem;
     position: relative;
     transition: none !important;
