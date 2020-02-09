@@ -6,6 +6,9 @@
     height: 100%;
     background: #fff;
     transition: .8s;
+    @include max(500) {
+        transition: .45s;
+    }
     transform: translateX(200%);
     padding: 1.5rem 0;
     box-shadow: -2rem 0 2.5rem #261e32;

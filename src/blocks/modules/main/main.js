@@ -16,6 +16,9 @@ if (grid) {
             }
         })
 
+        //iso.insert(document.querySelectorAll('.hidden .grid_works__item'))
+        grid.classList.add('main-animate')
+
         const matchesSelector = (el, selector) => {
             var p = Element.prototype;
             var f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
