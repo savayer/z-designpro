@@ -1,5 +1,5 @@
 const blurOnHover = (selector, hideOnMobile = false, cb) => {
-    if (document.documentElement.clientWidth <= 500 && hideOnMobile) {
+    if (document.documentElement.clientWidth <= 750 && hideOnMobile) {
         return
     }
     const items = document.querySelectorAll(selector)
@@ -36,7 +36,7 @@ const blurOnHover = (selector, hideOnMobile = false, cb) => {
     }
 }
 
-blurOnHover('.services__item')
+blurOnHover('.services__item', true)
 blurOnHover('.process__item', true, function() {
     document.querySelector('.process__wrapper').addEventListener('mouseleave', function() {
         this.closest('.process').classList.remove('loaded')
