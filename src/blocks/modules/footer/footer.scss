@@ -27,6 +27,9 @@
     position: absolute;
     bottom: -35px;
     right: 20px;
+    @include max(360) {
+        right: 7px;
+    }
     cursor: pointer;
     &:after {
         content: '';
