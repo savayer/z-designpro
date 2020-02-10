@@ -100,6 +100,20 @@
     cursor: pointer;
     margin: 0;
     transition: .3s linear;
+    &.mob {
+        display: none;
+    }
+    @include max(900) {
+        &.desk {
+            display: none;
+        }
+        &.mob {
+            display: block;
+        }
+        max-width: 50%;
+        margin: 20px 0;
+    }
+    @include sm(max-width, 70%);
     &.hover_js {
         &:nth-child(odd) {
             transform: translateX(-30px);
