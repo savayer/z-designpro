@@ -1,3 +1,4 @@
+<div class="overlay-project"></div>
 <div class="work" :class="{ active: viewProject }">
     <div class="work__header">
         <div class="work__info">
@@ -8,7 +9,7 @@
                 {{ projectDescription }}
             </span>
         </div>
-        <div class="work__view_site" v-if="showGoToSite">
+        <div class="work__view_site">
             <a href="#" class="button button--white">
                 <span class="button__text">
                     Go to site                
@@ -35,7 +36,7 @@
                     <span>Next</span>
                 </span>
             </div>
-            <svg class="close_icon work__close" viewBox="0 0 42 50" @click="viewProject = !viewProject">
+            <svg class="close_icon work__close" viewBox="0 0 42 50" @click="popupProjectToggle()">
                 <path class="close_icon__arc" style="fill:none;stroke:#231f20;stroke-width:2;stroke-miterlimit:10"
                     d="M 0.58123819,5.8 C 4.7812382,2.8 9.9812382,1 15.581238,1 c 14.2,0 25.7,11.5 25.7,25.7 0,9.9 -5.6,18.5 -13.8,22.8" />
                 <line class="line1" style="fill:none;stroke:#231f20;stroke-width:5;stroke-miterlimit:10" x1="5.0812378" y1="16.800001"
@@ -44,5 +45,8 @@
                     x2="5.0812378" y2="37.299999" />
             </svg>
         </div>
+    </div>
+    <div class="work__body">
+        <img v-for="p, index in projectMedia" :key="index" :src="p" :alt="`${projectName} screen ${index+1}`">    
     </div>
 </div>
