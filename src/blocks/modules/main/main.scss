@@ -59,7 +59,7 @@
     overflow: hidden;
 }
 .grid_works {
-    @include row-flex();
+    /* @include row-flex(); */
     max-width: 95%;
     margin: auto;
     overflow: hidden;
@@ -73,6 +73,12 @@
 /*     &.main-animate {
         animation: mainAnimate 4s ease-out forwards;
     } */
+}
+.m-minus-top {
+    margin-top: -1.875rem;
+}
+[v-cloak] {
+    display: none;
 }
 
 @keyframes mainAnimate {
@@ -93,30 +99,29 @@
         filter: blur(0);
         transform: translateY(0);
     }
-
 }
 
 @keyframes animateProjects {
     from {
-        padding-top: 50px;
+        transform: translateY(50px);
         filter: blur(5px);
     }
     to {
-        padding-top: 0;
+        transform: translateY(0);
         filter: blur(0);
     }
 }
 
 .grid_works__item {
-    @include col();
+    /* @include col();
     @include size(4);
     @include size-lg(6);
-    @include size-sm(12);
+    @include size-sm(12); */
     &.big-z-index {
         z-index: 9999;
     }
     overflow: hidden;
-    margin: 0.9375rem;
+    margin: 1.875rem 0.9375rem;
     position: relative;
     transition: none !important;
     img {

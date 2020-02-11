@@ -70,6 +70,7 @@
         "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",
         "slick-carousel": "^1.8.1",
-        "smart-grid": "^2.1.2"
+        "smart-grid": "^2.1.2",
+        "vue-masonry-css": "^1.0.3"
     }
 }

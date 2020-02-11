@@ -5,7 +5,7 @@
         </symbol>
     </svg>
     <ul class="nav_works">
-        <li class="nav_works__item" :class="{ 'active-work': key === filter }" v-for="cat, key in categories" :key="key" @click="setActive(key)">
+        <li class="nav_works__item" v-cloak :class="{ 'active-work': key === filter }" v-for="cat, key in categories" :key="key" @click="setActive(key)">
             {{ cat }}
         </li>
     </ul>
@@ -13,17 +13,22 @@
     @@include("./work/work.html")
     <div class="grid_wrapper">
         <section class="grid_works">
-            <div class="grid_works__item" v-for="work in filtered" :key="work.id" :class="work.category">
-                <img :src="work.image" alt="work.name">
-                <div class="grid_works__hover">
-                    <div class="grid_works__more">
-                        <div class="grid_works__link">
-                            <a href="#">View project</a>
+            <masonry
+                :cols="{default: 3, 992: 2, 576: 1}"
+                :column-class="'m-minus-top'"
+                >
+                <div class="grid_works__item" v-for="work in filtered" :key="work.id">
+                    <img :src="work.image" :alt="work.name">
+                    <div class="grid_works__hover">
+                        <div class="grid_works__more">
+                            <div class="grid_works__link">
+                                <a href="#">View project</a>
+                            </div>
+                            <svg viewBox="0 0 226.8 37.9"><use xlink:href="#arc" /></svg>
                         </div>
-                        <svg viewBox="0 0 226.8 37.9"><use xlink:href="#arc" /></svg>
                     </div>
-                </div>            
-            </div>
+                </div>
+            </masonry>
         </section>
     </div>
 </div>
