@@ -70,7 +70,6 @@
         "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",
         "slick-carousel": "^1.8.1",
-        "smart-grid": "^2.1.2",
-        "snapsvg-cjs": "0.0.6"
+        "smart-grid": "^2.1.2"
     }
 }

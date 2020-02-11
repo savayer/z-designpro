@@ -171,6 +171,12 @@ h3,.h3 {
     }
     &--white {
         border-color: #fff;
+        background: transparent;
+        padding: .5em 1em .5em 2.25em;
+        margin: 0;
+        .button__text {
+            font-weight: 400;
+        }
         .button__text {
             color: #fff;
         }
