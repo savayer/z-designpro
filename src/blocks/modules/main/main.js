@@ -1,6 +1,9 @@
 import Vue from '../../../js/import/vue.esm.browser'
 import VueMasonry from 'vue-masonry-css'
+import VueLazyload from 'vue-lazyload'
+
 Vue.use(VueMasonry)
+Vue.use(VueLazyload)
 
 new Vue({
     el: '#app',    
@@ -48,6 +51,12 @@ new Vue({
                 this.projectName = currentWork.name
                 this.projectDescription = currentWork.description
                 this.projectMedia = currentWork.images
+                setTimeout(() => {
+                    window.history.pushState(null, null, '#'+currentWork.slug)
+                }, 0)
+            } else {
+                window.history.pushState(null, null, '#')
+                this.projectMedia = null
             }
 
             this.viewProject = !this.viewProject
@@ -82,6 +91,7 @@ new Vue({
                 id: i+1,
                 name: `Test project ${i+1}`,
                 description: '',
+                slug: `test-project-${i+1}`,
                 image: url,
                 category: categories[categoryIterator],
                 images: null

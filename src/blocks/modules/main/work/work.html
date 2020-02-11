@@ -47,6 +47,9 @@
         </div>
     </div>
     <div class="work__body">
-        <img v-for="p, index in projectMedia" :key="index" :src="p" :alt="`${projectName} screen ${index+1}`">    
+        <div v-lazy-container="{ selector: 'img' }">
+            <img v-for="p, index in projectMedia" :key="index" 
+                :data-src="p" :alt="`${projectName} screen ${index+1}`">
+        </div>
     </div>
 </div>
