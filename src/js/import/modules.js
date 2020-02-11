@@ -1,7 +1,5 @@
 import "%modules%/nav/nav";
 import "%modules%/menu/menu";
-import "%modules%/main/main";
-import "%modules%/main/work/work";
 import "%modules%/blog/blog";
 import "%modules%/process/process";
 import "%modules%/post/post";

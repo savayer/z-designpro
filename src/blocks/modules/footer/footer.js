@@ -1,3 +1,7 @@
+window.addEventListener('load', () => {
+    document.querySelector('.footer').classList.remove('none')
+})
+
 const goUp = document.querySelector('.footer__go_up a')
 if (goUp) {
     Math.easeInOutQuad = function (t, b, c, d) {
