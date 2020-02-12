@@ -38,7 +38,22 @@ const app = new Vue({
     },
     watch: {
         route(hash) {
+            console.log('route hash '+hash)
+            if (!hash) {
+                if (this.viewProject) {
+                    this.viewProject = false
+                    document.body.classList.remove('overflow-hidden')
+                    document.querySelector('.overlay-project').classList.remove('active')                
+                }                
+                return
+            }
+            if (!this.viewProject) {
+                this.viewProject = true
+                document.body.classList.add('overflow-hidden')
+                document.querySelector('.overlay-project').classList.add('active')
+            }
             this.currentIndexWork = this.filtered.findIndex(project => project.slug === hash.slice(1))
+            this.switchToChosenWork()
         }
     },
     methods: {
@@ -59,6 +74,7 @@ const app = new Vue({
             this.disabledNextArrow = !this.filtered[this.currentIndexWork+1] ? true : false
         },
         switchToChosenWork() {
+            this.projectMedia = null
             this.checkDisabledArrows()
             const currentWork = this.filtered[this.currentIndexWork]
             if (currentWork) {
@@ -72,6 +88,7 @@ const app = new Vue({
                 setTimeout(() => {
                     window.history.pushState(null, null, '#'+currentWork.slug)
                     window.dispatchEvent(new Event('popstate'))
+
                     document.querySelector('.work').scrollTop = 0
                 }, 0)
             } else {
@@ -94,15 +111,13 @@ const app = new Vue({
         },
         prevProject() {
             if (this.disabledPrevArrow) return;
-            this.projectMedia = null
             this.currentIndexWork--
-            this.switchToChosenWork(this.currentIndexWork)
+            this.switchToChosenWork()
         },
         nextProject() {
             if (this.disabledNextArrow) return;
-            this.projectMedia = null
             this.currentIndexWork++
-            this.switchToChosenWork(this.currentIndexWork)
+            this.switchToChosenWork()
         }
     },
     mounted() {
@@ -151,10 +166,18 @@ const app = new Vue({
     }
 })
 
-window.onpopstate = function(event) {
-    app.route = document.location.hash
-    //console.log(document.location.hash)
-    /* if (!document.location.hash) {
-        document.location.reload()
-    } */
+window.onpopstate = event => {
+    console.log(event)
+    console.log(document.location.hash)
+    if (event.isTrusted) {
+        if (!document.location.hash) {
+            app.route = null
+        } else {
+            app.route = document.location.hash
+        }
+    }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    app.route = document.location.hash
+})
