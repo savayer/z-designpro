@@ -1,4 +1,4 @@
-import Vue from '../../../js/import/vue.esm.browser'
+import Vue from '../../../js/import/vue.esm.browser.min'
 import VueMasonry from 'vue-masonry-css'
 import VueLazyload from 'vue-lazyload'
 
