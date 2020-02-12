@@ -14,6 +14,7 @@ new Vue({
         works: [],
         filter: 'w-web',
         projectMedia: null,
+        hiddenBody: false,
         categories: {
             'w-web': 'Web',
             'w-saas': 'Ui/Ux, Saas',
@@ -24,7 +25,10 @@ new Vue({
             'w-print': 'Print',
             'w-branding': 'Branding',
             'w-presentations': 'Presentations',
-        }
+        },
+        currentIndexWork: null,
+        disabledPrevArrow: false,
+        disabledNextArrow: false
     },
     computed: {
         filtered() {
@@ -44,21 +48,36 @@ new Vue({
             const img = new Image()
             img.src = url
         },
-        popupProjectToggle(currentWork) {
-            document.body.classList.toggle('overflow-hidden')
-            document.querySelector('.overlay-project').classList.toggle('active')
+        checkDisabledArrows() {
+            this.disabledPrevArrow = !this.filtered[this.currentIndexWork-1] ? true : false
+            this.disabledNextArrow = !this.filtered[this.currentIndexWork+1] ? true : false
+        },
+        switchToChosenWork() {
+            this.checkDisabledArrows()
+            const currentWork = this.filtered[this.currentIndexWork]
             if (currentWork) {
                 this.projectName = currentWork.name
-                this.projectDescription = currentWork.description
+                this.projectDescription = currentWork.description                
                 this.projectMedia = currentWork.images
+                /* this.hiddenBody = true
+                setTimeout(() => {
+                    this.hiddenBody = false
+                }, 150) */
                 setTimeout(() => {
                     window.history.pushState(null, null, '#'+currentWork.slug)
+                    document.querySelector('.work').scrollTop = 0
                 }, 0)
             } else {
                 window.history.pushState(null, null, '#')
                 this.projectMedia = null
             }
-
+        },
+        popupProjectToggle(index) {
+            this.currentIndexWork = index
+            this.switchToChosenWork()
+            document.body.classList.toggle('overflow-hidden')
+            document.querySelector('.overlay-project').classList.toggle('active')
+            document.querySelector('.svg_arrow__chevron--right').classList.add('shaking-to-right')
             this.viewProject = !this.viewProject
             /* const scroll = document.documentElement.scrollTop
             setTimeout(() => {
@@ -66,10 +85,16 @@ new Vue({
             }, 0) */
         },
         prevProject() {
-
+            if (this.disabledPrevArrow) return;
+            this.projectMedia = null
+            this.currentIndexWork--
+            this.switchToChosenWork(this.currentIndexWork)
         },
         nextProject() {
-
+            if (this.disabledNextArrow) return;
+            this.projectMedia = null
+            this.currentIndexWork++
+            this.switchToChosenWork(this.currentIndexWork)
         }
     },
     mounted() {

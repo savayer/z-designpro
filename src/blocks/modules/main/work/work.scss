@@ -30,6 +30,10 @@
 .work__body {
     max-width: 75%;
     margin: 58px auto 0;
+    transition: .2s;
+    &.hide {
+        opacity: 0;
+    }
     * {
         width: 100%;
     }

@@ -53,10 +53,15 @@
     &.disabled {
         opacity: .38;
         cursor: auto;
+        &:hover {
+            .svg_arrow__chevron {
+                transform: none;
+            }
+        }
     }
     &:hover {
         .svg_arrow__chevron--right {
-            transform: translateX(4px);    
+            transform: translateX(4px);
         }
         .svg_arrow__chevron--left {
             transform: translateX(-4px);    
@@ -72,6 +77,18 @@
 
 .svg_arrow__chevron {
     transition: .1s;
+    &--right.shaking-to-right {
+        animation: shakingToRight 1s .5s;
+    }    
+}
+
+@keyframes shakingToRight {
+    0%, 30%, 60%, 100% {
+        transform: translateX(0);
+    }
+    15%, 45%, 75% {
+        transform: translateX(4px);
+    }    
 }
 
 .work__close {
