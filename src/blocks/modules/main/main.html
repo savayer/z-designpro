@@ -5,7 +5,9 @@
         </symbol>
     </svg>
     <ul class="nav_works">
-        <li class="nav_works__item" v-cloak :class="{ 'active-work': key === filter }" v-for="cat, key in categories" :key="key" @click="setActive(key)">
+        <li class="nav_works__item" v-cloak 
+            :class="{ 'active-work': key === filter }" 
+            v-for="cat, key in categories" :key="key" @click="setActiveCategory(key)">
             {{ cat }}
         </li>
     </ul>
@@ -22,7 +24,7 @@
                     <div class="grid_works__hover">
                         <div class="grid_works__more">
                             <div class="grid_works__link">
-                                <a href="#" @click="popupProjectToggle(index)">View project</a>
+                                <a href="#view_project" @click.prevent="popupProjectToggle(index)">View project</a>
                             </div>
                             <svg viewBox="0 0 226.8 37.9"><use xlink:href="#arc" /></svg>
                         </div>

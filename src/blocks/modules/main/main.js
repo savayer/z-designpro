@@ -5,7 +5,7 @@ import VueLazyload from 'vue-lazyload'
 Vue.use(VueMasonry)
 Vue.use(VueLazyload)
 
-new Vue({
+const app = new Vue({
     el: '#app',    
     data: {
         projectName: 'Test project',
@@ -28,15 +28,21 @@ new Vue({
         },
         currentIndexWork: null,
         disabledPrevArrow: false,
-        disabledNextArrow: false
+        disabledNextArrow: false,
+        route: ''
     },
     computed: {
         filtered() {
             return this.works.filter(work => work.category === this.filter)
         }
     },
+    watch: {
+        route(hash) {
+            this.currentIndexWork = this.filtered.findIndex(project => project.slug === hash.slice(1))
+        }
+    },
     methods: {
-        setActive(category) {
+        setActiveCategory(category) {
             this.filter = category
             const grid = document.querySelector('.grid_works')
             grid.classList.add('animate-items')
@@ -65,10 +71,12 @@ new Vue({
                 }, 100)
                 setTimeout(() => {
                     window.history.pushState(null, null, '#'+currentWork.slug)
+                    window.dispatchEvent(new Event('popstate'))
                     document.querySelector('.work').scrollTop = 0
                 }, 0)
             } else {
                 window.history.pushState(null, null, '#')
+                window.dispatchEvent(new Event('popstate'))
                 this.projectMedia = null
             }
         },
@@ -142,3 +150,11 @@ new Vue({
         ]
     }
 })
+
+window.onpopstate = function(event) {
+    app.route = document.location.hash
+    //console.log(document.location.hash)
+    /* if (!document.location.hash) {
+        document.location.reload()
+    } */
+};
