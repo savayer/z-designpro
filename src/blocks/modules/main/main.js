@@ -58,11 +58,11 @@ new Vue({
             if (currentWork) {
                 this.projectName = currentWork.name
                 this.projectDescription = currentWork.description                
-                this.projectMedia = currentWork.images
-                /* this.hiddenBody = true
+                this.hiddenBody = true
                 setTimeout(() => {
+                    this.projectMedia = currentWork.images
                     this.hiddenBody = false
-                }, 150) */
+                }, 100)
                 setTimeout(() => {
                     window.history.pushState(null, null, '#'+currentWork.slug)
                     document.querySelector('.work').scrollTop = 0
