@@ -7,7 +7,7 @@ Vue.use(VueLazyload)
 
 if (document.documentElement.clientWidth > 500) {
     const app = new Vue({
-        el: '#app',    
+        el: '#app',
         data: {
             projectName: 'Test project',
             projectDescription: 'Full Branding Model',
@@ -17,6 +17,7 @@ if (document.documentElement.clientWidth > 500) {
             projectMedia: null,
             projectMediaAll: [],
             hiddenBody: false,
+            handleScroll: null,
             categories: {
                 'w-web': 'Web',
                 'w-saas': 'Ui/Ux, Saas',
@@ -51,8 +52,8 @@ if (document.documentElement.clientWidth > 500) {
                 img.src = url
             },
             checkDisabledArrows() {
-                this.disabledPrevArrow = !this.filtered[this.currentIndexWork-1] ? true : false
-                this.disabledNextArrow = !this.filtered[this.currentIndexWork+1] ? true : false
+                this.disabledPrevArrow = !this.filtered[this.currentIndexWork - 1] ? true : false
+                this.disabledNextArrow = !this.filtered[this.currentIndexWork + 1] ? true : false
             },
             switchToChosenWork() {
                 this.projectMedia = null
@@ -60,7 +61,7 @@ if (document.documentElement.clientWidth > 500) {
                 const currentWork = this.filtered[this.currentIndexWork]
                 if (currentWork) {
                     this.projectName = currentWork.name
-                    this.projectDescription = currentWork.description                
+                    this.projectDescription = currentWork.description
                     this.hiddenBody = true
                     setTimeout(() => {
                         this.projectMedia = currentWork.media
@@ -96,7 +97,7 @@ if (document.documentElement.clientWidth > 500) {
             const categories = Object.keys(this.categories)
             let categoryIterator = 0
             let imageIterator = 1
-    
+
             for (let i = 0; i < 100; i++) {
                 if (imageIterator === 19) {
                     imageIterator = 1
@@ -106,12 +107,12 @@ if (document.documentElement.clientWidth > 500) {
                 }
                 const url = `../../../img/works/${imageIterator}.png`
                 this.preloadImage(url)
-    
+
                 this.works.push({
-                    id: i+1,
-                    name: `Test project ${i+1}`,
+                    id: i + 1,
+                    name: `Test project ${i + 1}`,
                     description: '',
-                    slug: `test-project-${i+1}`,
+                    slug: `test-project-${i + 1}`,
                     image: url,
                     category: categories[categoryIterator],
                     media: null
@@ -147,9 +148,9 @@ if (document.documentElement.clientWidth > 500) {
 }
 
 if (document.documentElement.clientWidth <= 500) {
-    document.querySelector('.work__header').classList.remove('work__header--desk_view')
+    document.querySelector('.work__header').classList.remove('work__header--desk_view')    
     const app = new Vue({
-        el: '#app',    
+        el: '#app',
         data: {
             projectName: 'Test project',
             projectDescription: 'Full Branding Model',
@@ -195,20 +196,41 @@ if (document.documentElement.clientWidth <= 500) {
             },
             loadWorks() {
                 this.filtered.forEach(work => {
-                    this.projectMediaAll.push(work.media)
+                    const mediaInfo = {
+                        name: work.name,
+                        description: work.description,
+                        media: work.media
+                    }
+                    this.projectMediaAll.push(mediaInfo)
                 })
                 window.history.pushState(null, null, '#projects')
                 window.dispatchEvent(new Event('popstate'))
+                setTimeout(() => {
+                    this.scroll()
+                }, 0)
+            },
+            scroll() {
+                const projects = document.querySelectorAll('.work__project')
+                console.log(projects)
+                document.querySelector('.work').onscroll = e => {
+                    let currentScroll = e.target.scrollTop
+                                        
+                    for (let p of projects) {
+                        if (p.offsetTop-58 <= currentScroll) {
+                            this.projectName = p.dataset.name
+                            this.projectDescription = p.dataset.description
+                        }
+                    }
+                }
             },
             popupProjectToggle(index) {
                 this.loadWorks()
                 document.querySelector('.overlay-project').classList.toggle('active')
                 this.viewProject = !this.viewProject
-            }
+            }            
         },
         created() {
             window.onpopstate = e => {
-                console.log(e, document.location.hash)
                 if (this.viewProject && e.isTrusted) {
                     document.querySelector('.overlay-project').classList.remove('active')
                     this.viewProject = false
@@ -219,7 +241,7 @@ if (document.documentElement.clientWidth <= 500) {
             const categories = Object.keys(this.categories)
             let categoryIterator = 0
             let imageIterator = 1
-    
+
             for (let i = 0; i < 100; i++) {
                 if (imageIterator === 19) {
                     imageIterator = 1
@@ -229,12 +251,12 @@ if (document.documentElement.clientWidth <= 500) {
                 }
                 const url = `../../../img/works/${imageIterator}.png`
                 this.preloadImage(url)
-    
+
                 this.works.push({
-                    id: i+1,
-                    name: `Test project ${i+1}`,
+                    id: i + 1,
+                    name: `Test project ${i + 1}`,
                     description: '',
-                    slug: `test-project-${i+1}`,
+                    slug: `test-project-${i + 1}`,
                     image: url,
                     category: categories[categoryIterator],
                     images: null

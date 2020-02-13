@@ -53,9 +53,9 @@
                 <img v-else :data-src="item" :alt="`${projectName} screen ${index+1}`">
             </div>
 
-            <div v-for="arrMedia, index in projectMediaAll" :key="index">
-                <div class="work__project">
-                    <div v-for="item, i in arrMedia" :key="i">
+            <div v-for="objMediaInfo, index in projectMediaAll" :key="index">
+                <div class="work__project" :data-name="objMediaInfo.name" :data-description="objMediaInfo.description">
+                    <div v-for="item, i in objMediaInfo.media" :key="i">
                         <iframe v-if="item.type" :src="item.src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <img v-else :data-src="item" :alt="`${projectName} screen ${index+1}`">
                     </div>
