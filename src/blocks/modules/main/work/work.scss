@@ -40,4 +40,17 @@
     @include max(500) {
         max-width: 100%;
     }
+    iframe {
+        height: 700px;
+        width: 100%;
+        @include max(1400) { height: 600px; }
+        @include max(1200) { height: 500px; }
+        @include max(1000) { height: 400px; }
+        @include max(800) { height: 300px; }
+        @include max(600) { height: 250px; }
+    }
+}
+
+.work__project {
+    margin: 1.5rem 0;
 }

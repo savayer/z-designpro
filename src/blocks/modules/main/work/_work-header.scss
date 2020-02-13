@@ -24,6 +24,16 @@
             }
         }
     }
+    @include max(500) {
+        .work__navigation {
+            display: none;
+        }
+        .work__info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
 
 .work__name {
