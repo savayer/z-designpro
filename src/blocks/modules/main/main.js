@@ -29,31 +29,10 @@ const app = new Vue({
         currentIndexWork: null,
         disabledPrevArrow: false,
         disabledNextArrow: false,
-        route: ''
     },
     computed: {
         filtered() {
             return this.works.filter(work => work.category === this.filter)
-        }
-    },
-    watch: {
-        route(hash) {
-            console.log('route hash '+hash)
-            if (!hash) {
-                if (this.viewProject) {
-                    this.viewProject = false
-                    document.body.classList.remove('overflow-hidden')
-                    document.querySelector('.overlay-project').classList.remove('active')                
-                }                
-                return
-            }
-            if (!this.viewProject) {
-                this.viewProject = true
-                document.body.classList.add('overflow-hidden')
-                document.querySelector('.overlay-project').classList.add('active')
-            }
-            this.currentIndexWork = this.filtered.findIndex(project => project.slug === hash.slice(1))
-            this.switchToChosenWork()
         }
     },
     methods: {
@@ -86,14 +65,9 @@ const app = new Vue({
                     this.hiddenBody = false
                 }, 100)
                 setTimeout(() => {
-                    window.history.pushState(null, null, '#'+currentWork.slug)
-                    window.dispatchEvent(new Event('popstate'))
-
                     document.querySelector('.work').scrollTop = 0
                 }, 0)
             } else {
-                window.history.pushState(null, null, '#')
-                window.dispatchEvent(new Event('popstate'))
                 this.projectMedia = null
             }
         },
@@ -104,10 +78,6 @@ const app = new Vue({
             document.querySelector('.overlay-project').classList.toggle('active')
             document.querySelector('.svg_arrow__chevron--right').classList.add('shaking-to-right')
             this.viewProject = !this.viewProject
-            /* const scroll = document.documentElement.scrollTop
-            setTimeout(() => {
-                document.documentElement.scrollTop = scroll
-            }, 0) */
         },
         prevProject() {
             if (this.disabledPrevArrow) return;
@@ -160,24 +130,11 @@ const app = new Vue({
             '../../../img/works_view/9.png',
             '../../../img/works_view/10.png',
         ]
+        this.works[20].name = 'Galim project'
+        this.works[20].slug = 'galim-project'
+        this.works[20].description = 'Full branding model'
         this.works[0].images = [
             '../../../img/works_view/1.png',
         ]
     }
-})
-
-window.onpopstate = event => {
-    console.log(event)
-    console.log(document.location.hash)
-    if (event.isTrusted) {
-        if (!document.location.hash) {
-            app.route = null
-        } else {
-            app.route = document.location.hash
-        }
-    }
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    app.route = document.location.hash
 })

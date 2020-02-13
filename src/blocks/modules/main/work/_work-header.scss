@@ -7,7 +7,23 @@
     left: 0;
     right: 0;
     padding: .5rem 2rem;
+    @include max(500) {
+        padding: .5rem 1rem;
+    }
+    min-height: 58px;
     user-select: none;
+    &--desk_view {
+        @include md-block {
+            .work__description {
+                display: none;
+            }
+        }
+        @include max(500) {
+            .work__arrows {
+                display: none;
+            }
+        }
+    }
 }
 
 .work__name {
@@ -16,6 +32,7 @@
     font-size: 1.375em;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;    
+    @include md(font-size, 1.25em);
 }
 
 .work__description {
@@ -24,6 +41,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     margin-left: 1rem;
+    @include xl(font-size, 1.125em);
 }
 
 .work__view_site {
@@ -33,6 +51,7 @@
     text-align: center;
     max-width: 200px;
     margin: auto;
+    @include max(1100) { display: none; }    
 }
 
 .work__navigation {
