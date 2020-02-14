@@ -23,6 +23,11 @@
     &::-webkit-scrollbar-thumb {
         background-color: #353535;
     }
+    @include md-block {
+        &::-webkit-scrollbar {
+            width: 0;
+        }   
+    }
 }
 
 @import './work-header';

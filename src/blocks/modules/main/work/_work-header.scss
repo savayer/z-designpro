@@ -94,10 +94,10 @@
     }
     &:hover {
         .svg_arrow__chevron--right {
-            transform: translateX(4px);
+            transform: translateX(1px);
         }
         .svg_arrow__chevron--left {
-            transform: translateX(-4px);    
+            transform: translateX(-1px);    
         }
     }
     span {

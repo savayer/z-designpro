@@ -1,5 +1,17 @@
 window.addEventListener('load', () => {
-    document.querySelector('.footer').classList.remove('none')
+//document.addEventListener('DOMContentLoaded', () => {
+    const footer = document.querySelector('.footer')
+    const menuWrapper = document.querySelector('.menu_wrapper')
+    const overlay = document.querySelector('.overlay')
+    const overlayProject = document.querySelector('.overlay-project')
+
+    footer.classList.remove('none')
+    menuWrapper.classList.remove('none')
+    overlay.classList.add('block')
+
+    if (overlayProject) {
+        overlayProject.classList.add('block')
+    }
 })
 
 const goUp = document.querySelector('.footer__go_up a')

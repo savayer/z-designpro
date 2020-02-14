@@ -54,12 +54,16 @@ body {
     &.active {
         transform: translateX(0);
     }
+    display: none;
+    &.block {
+        display: block;
+    }
 }
 
 .overlay-project {
     transform: none;
     opacity: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95);
     z-index: -1;
     &.active {
         z-index: 9999999;
@@ -260,4 +264,8 @@ h3,.h3 {
     50% {
         transform: translateX(7px);
     }
+}
+
+.none {
+    display: none;
 }
