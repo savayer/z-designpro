@@ -54,10 +54,6 @@ body {
     &.active {
         transform: translateX(0);
     }
-    display: none;
-    &.block {
-        display: block;
-    }
 }
 
 .overlay-project {
@@ -209,6 +205,9 @@ h3,.h3 {
         .button__arrow svg {
             fill: #fff
         }
+        &:hover .button__arrow {
+            animation: moveSmall .7s ease;
+        }
     }
 
     &--blue {
@@ -266,6 +265,11 @@ h3,.h3 {
     }
 }
 
-.none {
-    display: none;
+@keyframes moveSmall {
+    0%, 100% {
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(1px);
+    }
 }

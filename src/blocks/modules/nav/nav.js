@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     grid.style.marginTop = navWorks.clientHeight + 'px'
                 }
             } else {
-                grid.style.marginTop = navHome.clientHeight + navWorks.clientHeight + 'px'
+                grid.style.marginTop = navHome.clientHeight + navWorks.clientHeight + 13 + 'px'
             }
         }
     }

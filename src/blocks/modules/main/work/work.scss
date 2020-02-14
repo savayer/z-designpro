@@ -33,21 +33,22 @@
 @import './work-header';
 
 .work__body {
-    max-width: 75%;
-    margin: 58px auto 0;
+    margin: 87px auto 0;
     transition: .1s;
     &.hide {
         opacity: 0;
     }
     * {
-        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 5px auto 0;        
     }
     @include max(500) {
         max-width: 100%;
     }
     iframe {
         height: 700px;
-        width: 100%;
+        width: 1400px;
         @include max(1400) { height: 600px; }
         @include max(1200) { height: 500px; }
         @include max(1000) { height: 400px; }

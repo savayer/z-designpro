@@ -50,7 +50,10 @@
         background-color: $active;
         color: #fff;
     }
-    @include max(500) {
+    @include max(650) { padding: .35em .8em; }
+    @include max(600) { padding: .35em .6em; }
+    @include sm-block {
+        padding: .35em .5em;
         font-size: 1em;
     }
     @include xs(padding, 0.4em 0.6em);
@@ -73,8 +76,10 @@
     margin: auto;
     overflow: hidden;
     //filter: blur(5px);
-    @include md(margin-top, 235px);
-    @include sm(margin-top, 265px);
+    @include md(margin-top, 245px);
+    @include sm(margin-top, 216px);
+    @include max(490) { margin-top: 262px;}
+    @include xs(margin-top, 267px);
     &.animate-items {
         .grid_works__item {
             animation: animateProjects .3s linear;

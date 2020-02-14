@@ -211,7 +211,6 @@ if (document.documentElement.clientWidth <= 500) {
             },
             scroll() {
                 const projects = document.querySelectorAll('.work__project')
-                console.log(projects)
                 document.querySelector('.work').onscroll = e => {
                     let currentScroll = e.target.scrollTop
                                         

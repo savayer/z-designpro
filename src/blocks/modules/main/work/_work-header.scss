@@ -10,7 +10,7 @@
     @include max(500) {
         padding: .5rem 1rem;
     }
-    min-height: 58px;
+    min-height: 87px;
     user-select: none;
     &--desk_view {
         @include md-block {

@@ -37,7 +37,6 @@ const blurOnHover = (selector, cb, execute = false) => {
     }
 }
 
-blurOnHover('.services__item')
 blurOnHover('.process__item', function() {
     document.querySelector('.process__wrapper').addEventListener('mouseleave', function() {
         this.closest('.process').classList.remove('loaded')
@@ -46,5 +45,4 @@ blurOnHover('.process__item', function() {
         }, 0)
     })    
 })
-blurOnHover('.post__wrapper')
 blurOnHover('.logos__image', null, true)
