@@ -24,7 +24,7 @@ if (document.documentElement.clientWidth > 500) {
                 'w-mobile': 'Mobile',
                 'w-wireframes': 'Wireframes',
                 'w-logo': 'Logo',
-                'w-tablet': 'Apps',
+                'w-tablet': 'Tablet Apps',
                 'w-print': 'Print',
                 'w-branding': 'Branding',
                 'w-presentations': 'Presentations',
@@ -166,7 +166,7 @@ if (document.documentElement.clientWidth <= 500) {
                 'w-mobile': 'Mobile',
                 'w-wireframes': 'Wireframes',
                 'w-logo': 'Logo',
-                'w-tablet': 'Apps',
+                'w-tablet': 'Tablet Apps',
                 'w-print': 'Print',
                 'w-branding': 'Branding',
                 'w-presentations': 'Presentations',
@@ -223,6 +223,7 @@ if (document.documentElement.clientWidth <= 500) {
                 }
             },
             popupProjectToggle(index) {
+                if (this.filter === 'w-logo') return false
                 this.loadWorks()
                 document.querySelector('.overlay-project').classList.toggle('active')
                 this.viewProject = !this.viewProject

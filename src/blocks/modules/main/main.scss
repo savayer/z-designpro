@@ -62,9 +62,22 @@
         margin: 0.4em .3em;
         padding: .4em .5em;
     }
-    @include max(350) {
+    @include max(330) {
         margin: 0.4em .3em;
         padding: .4em .45em;
+        font-size: .95em;
+    }
+}
+@include max(500) {
+    #detect_change_filter.w-logo {
+        & + .grid_wrapper {
+            .grid_works__hover {
+                display: none;
+            }
+            img {
+                filter: none;
+            }
+        }
     }
 }
 .grid_wrapper {
