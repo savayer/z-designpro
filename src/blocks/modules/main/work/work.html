@@ -47,18 +47,16 @@
         </div>
     </div>
     <div class="work__body" :class="{'hide': hiddenBody}">
-        <div v-lazy-container="{ selector: 'img' }">
-            <div v-for="item, index in projectMedia" :key="index" >
-                <iframe v-if="item.type" :src="item.src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <img v-else :data-src="item" :alt="`${projectName} screen ${index+1}`">
-            </div>
+        <div v-for="item, index in projectMedia" :key="index" >
+            <iframe v-if="item.type" :src="item.src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img v-else v-lazy="item" lazy="loading" :alt="`${projectName} screen ${index+1}`">
+        </div>
 
-            <div v-for="objMediaInfo, index in projectMediaAll" :key="index">
-                <div class="work__project" :data-name="objMediaInfo.name" :data-description="objMediaInfo.description">
-                    <div v-for="item, i in objMediaInfo.media" :key="i">
-                        <iframe v-if="item.type" :src="item.src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <img v-else :data-src="item" :alt="`${projectName} screen ${index+1}`">
-                    </div>
+        <div v-for="objMediaInfo, index in projectMediaAll" :key="index">
+            <div class="work__project" :data-name="objMediaInfo.name" :data-description="objMediaInfo.description">
+                <div v-for="item, i in objMediaInfo.media" :key="i">
+                    <iframe v-if="item.type" :src="item.src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <img v-else v-lazy="item" :alt="`${projectName} screen ${index+1}`">
                 </div>
             </div>
         </div>

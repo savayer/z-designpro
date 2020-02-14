@@ -2,6 +2,10 @@ import $ from 'jquery'
 import '../../../node_modules/jquery-ui/ui/effect'
 import 'slick-carousel'
 
+window.addEventListener('load', () => {
+    $('.preloader').fadeOut()
+})
+
 function animateOverlay(el, dur, easing = 'linear', close = false, closeOverlay = false) {
     let fake = {}
 

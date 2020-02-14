@@ -2,8 +2,11 @@ import Vue from '../../../js/import/vue.esm.browser.min'
 import VueMasonry from 'vue-masonry-css'
 import VueLazyload from 'vue-lazyload'
 
+Vue.use(VueLazyload, {
+    lazyComponent: true,
+    loading: '../../../img/loading.gif'
+});
 Vue.use(VueMasonry)
-Vue.use(VueLazyload)
 
 if (document.documentElement.clientWidth > 500) {
     const app = new Vue({
@@ -148,7 +151,7 @@ if (document.documentElement.clientWidth > 500) {
 }
 
 if (document.documentElement.clientWidth <= 500) {
-    document.querySelector('.work__header').classList.remove('work__header--desk_view')    
+    document.querySelector('.work__header').classList.remove('work__header--desk_view')
     const app = new Vue({
         el: '#app',
         data: {
@@ -195,6 +198,7 @@ if (document.documentElement.clientWidth <= 500) {
                 img.src = url
             },
             loadWorks() {
+                this.projectMediaAll = []
                 this.filtered.forEach(work => {
                     const mediaInfo = {
                         name: work.name,
@@ -213,21 +217,21 @@ if (document.documentElement.clientWidth <= 500) {
                 const projects = document.querySelectorAll('.work__project')
                 document.querySelector('.work').onscroll = e => {
                     let currentScroll = e.target.scrollTop
-                                        
+
                     for (let p of projects) {
-                        if (p.offsetTop-58 <= currentScroll) {
+                        if (p.offsetTop - 87 <= currentScroll) {
                             this.projectName = p.dataset.name
                             this.projectDescription = p.dataset.description
                         }
                     }
                 }
             },
-            popupProjectToggle(index) {
+            popupProjectToggle() {
                 if (this.filter === 'w-logo') return false
                 this.loadWorks()
                 document.querySelector('.overlay-project').classList.toggle('active')
                 this.viewProject = !this.viewProject
-            }            
+            }
         },
         created() {
             window.onpopstate = e => {

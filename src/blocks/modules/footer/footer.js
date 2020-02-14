@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
     const footer = document.querySelector('.footer')
+    footer.classList.remove('none')
 })
 
 const goUp = document.querySelector('.footer__go_up a')
