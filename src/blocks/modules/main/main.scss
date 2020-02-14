@@ -147,7 +147,7 @@
         img {
             filter: blur(5px);
         }
-        .grid_works__link {
+        .grid_works__text {
             transform: translateY(0);
             opacity: 1;            
         }
@@ -204,18 +204,19 @@
     }
 }
 
-.grid_works__link {
+.grid_works__text {
     opacity: 0;    
     transform: translateY(30px);
     transition: .1s linear .2s;
     position: relative;
     z-index: 2;
-    a {
-        font-size: 1.75em;
-        @include xl(font-size, 1.5em);
-        @include md(font-size, 1.25em);
-        text-transform: uppercase;
-        color: #fff;
-        text-decoration: none;        
-    }
+}
+
+.grid_works__link {
+    font-size: 1.75em;
+    @include xl(font-size, 1.5em);
+    @include md(font-size, 1.25em);
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
 }
