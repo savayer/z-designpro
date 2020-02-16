@@ -59,7 +59,8 @@ function setClickEventByModalToggleButton($button, modalSelector) {
                     arrows: false,
                     infinite: true,
                     autoplay: true,
-                    autoplaySpeed: 3000
+                    autoplaySpeed: 3000,
+                    speed: 1000,
                 })
             }, 500)
         }
