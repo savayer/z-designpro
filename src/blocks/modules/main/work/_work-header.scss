@@ -30,9 +30,11 @@
         }
         .work__description {
             text-align: right;
+            flex-shrink: 0;
         }
         .work__info {
             width: 100%;
+            align-items: center;
             display: flex;
             justify-content: space-between;
         }
@@ -46,6 +48,9 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;    
     @include md(font-size, 1.25em);
+    @include max(350) {
+        font-size: 1.125em;
+    }
 }
 
 .work__description {

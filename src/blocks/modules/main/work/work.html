@@ -6,7 +6,25 @@
                 {{ projectName }}
             </span>
             <span class="work__description">
-                {{ projectDescription }}
+                <div v-if="false" class="work__mobile-view-site">
+                    <a href="#" class="button button--mobile">
+                        <span class="button__text">
+                            Go to site                
+                        </span>
+                        <span class="button__container">
+                            <span class="button__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="18" viewBox="0 0 27 18">
+                                    <g>
+                                        <path d="M17.592.034L16.03 1.6l6.35 6.368H-.085v2.214H22.38l-6.35 6.368 1.56 1.565 9.02-9.04z" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div v-else>
+                    {{ projectDescription }}
+                </div>
             </span>
         </div>
         <div class="work__view_site">

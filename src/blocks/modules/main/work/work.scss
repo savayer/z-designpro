@@ -63,4 +63,7 @@
 
 img[lazy=loading] {
     margin: 350px auto;
+    @include md(margin, 250px auto);
+    @include sm(margin, 200px auto);
+    @include xs(margin, 150px auto);
 } 
