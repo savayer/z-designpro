@@ -177,7 +177,7 @@ if (document.documentElement.clientWidth <= 500) {
             currentIndexWork: null,
             disabledPrevArrow: false,
             disabledNextArrow: false,
-            route: ''
+            currentIndex: 0
         },
         computed: {
             filtered() {
@@ -198,7 +198,11 @@ if (document.documentElement.clientWidth <= 500) {
                 img.src = url
             },
             loadWorks() {
+                const index = this.currentIndex
+                this.projectName = this.filtered[index].name
+                this.projectDescription = this.filtered[index].description
                 this.projectMediaAll = []
+                
                 this.filtered.forEach(work => {
                     const mediaInfo = {
                         name: work.name,
@@ -210,6 +214,7 @@ if (document.documentElement.clientWidth <= 500) {
                 window.history.pushState(null, null, '#projects')
                 window.dispatchEvent(new Event('popstate'))
                 setTimeout(() => {
+                    document.querySelector('.work').scrollTop = document.querySelector('.work__body').children[index].offsetTop - 87
                     this.scroll()
                 }, 0)
             },
@@ -226,7 +231,8 @@ if (document.documentElement.clientWidth <= 500) {
                     }
                 }
             },
-            popupProjectToggle() {
+            popupProjectToggle(index) {
+                this.currentIndex = index
                 if (this.filter === 'w-logo') return false
                 this.loadWorks()
                 document.querySelector('.overlay-project').classList.toggle('active')
