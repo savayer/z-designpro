@@ -35,13 +35,13 @@
             opacity: 1;
             transform: translateY(0px);
             &:nth-child(1) {
-                transition: .5s 1s;
+                transition: .8s 1s;
             }
             &:nth-child(2) {
-                transition: .5s 1.2s;
+                transition: .8s 1.4s;
             }
             &:nth-child(3) {
-                transition: .5s 1.4s;
+                transition: .8s 1.8s;
             }
         }
         .modal__logos {

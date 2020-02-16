@@ -35,6 +35,10 @@
         @include md(order, 0);
     }
     margin-bottom: 2rem;
+    transition: .2s;
+    &:hover {
+        transform: scale(1.02);
+    }
 }
 
 .post__wrapper {
