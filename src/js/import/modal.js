@@ -3,7 +3,38 @@ import '../../../node_modules/jquery-ui/ui/effect'
 import 'slick-carousel'
 
 window.addEventListener('load', () => {
-    $('.preloader').fadeOut()
+    $('body').removeClass('overflow-hidden')
+    $('.preloader').fadeOut()    
+    const cloneFewTimes = (amount) => {
+        let items = {}
+        const columns = document.querySelectorAll('.m-minus-top')
+        columns.forEach((column, index) => {
+            let localItems = []
+            column.querySelectorAll('.grid_works__item').forEach(item => {
+                const cloned = item.cloneNode(true)
+                cloned.classList.add('delete-after-animation')
+                localItems.push(cloned)                
+            })
+            items[index] = localItems
+            localItems = []
+
+            for (let i = 0; i < amount; i++) {                
+                for (let item of items[index]) {
+                    column.append(item.cloneNode(true))
+                }
+            }
+        })
+    }    
+    
+    cloneFewTimes(10)
+    const grid = document.querySelector('.grid_works')
+    grid.addEventListener('animationend', (e) => {
+        if (e.animationName !== 'mainAnimate') return;
+        console.log('done', e)
+        document.querySelectorAll('.delete-after-animation').forEach(node => node.remove())
+        grid.classList.remove('main-animate')
+    })
+    grid.classList.add('main-animate')
 })
 
 function animateOverlay(el, dur, easing = 'linear', close = false, closeOverlay = false) {
