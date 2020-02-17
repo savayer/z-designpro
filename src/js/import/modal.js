@@ -26,15 +26,17 @@ window.addEventListener('load', () => {
         })
     }    
     
-    cloneFewTimes(10)
     const grid = document.querySelector('.grid_works')
-    grid.addEventListener('animationend', (e) => {
-        if (e.animationName !== 'mainAnimate') return;
-        console.log('done', e)
-        document.querySelectorAll('.delete-after-animation').forEach(node => node.remove())
-        grid.classList.remove('main-animate')
-    })
-    grid.classList.add('main-animate')
+    if (grid) {
+        cloneFewTimes(10)
+        grid.addEventListener('animationend', (e) => {
+            if (e.animationName !== 'mainAnimate') return;
+            console.log('done', e)
+            document.querySelectorAll('.delete-after-animation').forEach(node => node.remove())
+            grid.classList.remove('main-animate')
+        })
+        grid.classList.add('main-animate')
+    }
 })
 
 function animateOverlay(el, dur, easing = 'linear', close = false, closeOverlay = false) {
