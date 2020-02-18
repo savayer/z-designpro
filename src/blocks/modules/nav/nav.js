@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let offset
     if (navWorks) {
         offset = navWorks.offsetTop
+        if (!offset) offset = 135
     }
 
     const setGridMarginTop = (mobile = false) => {
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     navHome.classList.remove('offset_lang')
                 }                
             }
-            if (navWorks) {            
+            if (navWorks) {       
                 if (this.scrollY >= offset-12) {
                     navWorks.classList.add('fixed', 'shadow')
                     setGridMarginTop()
