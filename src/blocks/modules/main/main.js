@@ -101,7 +101,7 @@ if (document.documentElement.clientWidth > 500) {
             let categoryIterator = 0
             let imageIterator = 1
 
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 130; i++) {
                 if (imageIterator === 19) {
                     imageIterator = 1
                 }

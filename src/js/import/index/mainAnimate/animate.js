@@ -1,35 +1,22 @@
 window.addEventListener('load', () => {
     document.body.classList.remove('overflow-hidden')
     const preloader = document.querySelector('.preloader')
-    preloader.classList.add('hide')
+    preloader.classList.add('hide')    
 
-    const cloneFewTimes = (amount) => {
-        let items = {}
-        const columns = document.querySelectorAll('.m-minus-top')
-        columns.forEach((column, index) => {
-            let localItems = []
-            column.querySelectorAll('.grid_works__item').forEach(item => {
-                const cloned = item.cloneNode(true)
-                cloned.classList.add('delete-after-animation')
-                localItems.push(cloned)                
-            })
-            items[index] = localItems
-            localItems = []
+    const grid = document.querySelector('.grid_works')    
+    if (grid) {        
+        const masonry = grid.firstElementChild
+        const clone = masonry.cloneNode(true)
+        clone.classList.add('delete-after-animation')
+        grid.insertAdjacentElement('afterbegin', clone)        
+        grid.insertAdjacentElement('afterbegin', clone.cloneNode(true))        
+        grid.insertAdjacentElement('afterbegin', clone.cloneNode(true))
+        grid.insertAdjacentElement('afterbegin', clone.cloneNode(true))
+        grid.insertAdjacentElement('afterbegin', clone.cloneNode(true))
 
-            for (let i = 0; i < amount; i++) {                
-                for (let item of items[index]) {
-                    column.append(item.cloneNode(true))
-                }
-            }
-        })
-    }    
-
-    const grid = document.querySelector('.grid_works')
-    if (grid) {
-        cloneFewTimes(10)
         grid.addEventListener('animationend', (e) => {
             if (e.animationName !== 'mainAnimate') return;
-            console.log('done', e)
+            //console.log('done', e)
             document.querySelectorAll('.delete-after-animation').forEach(node => node.remove())
             grid.classList.remove('main-animate')
         })
