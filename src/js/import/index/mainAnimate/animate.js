@@ -1,4 +1,6 @@
 window.addEventListener('load', () => {
+    document.querySelector('.hidden').style.display = 'block';
+
     document.body.classList.remove('overflow-hidden')
     const preloader = document.querySelector('.preloader')
     preloader.classList.add('hide')    

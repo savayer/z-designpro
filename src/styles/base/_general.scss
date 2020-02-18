@@ -19,7 +19,9 @@ h1, h2, h3, h4, h5, h6, ul {
     overflow-x: hidden;
     transition: .5s;
 }
-
+.hidden {
+    display: none;
+}
 body {
     font-family: 'FuturaBold', 'Open Sans', sans-serif;
     font-size: 16px;
