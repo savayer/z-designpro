@@ -13,7 +13,7 @@ function animateOverlay(el, dur, easing = 'linear', close = false, closeOverlay 
         },
         done() {
             if (closeOverlay) {
-                el.closest('.modal').classList.remove('showed')                
+                $(el).closest('.modal').removeClass('showed')
             }
         },
         easing,

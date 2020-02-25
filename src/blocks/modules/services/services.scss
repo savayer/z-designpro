@@ -6,13 +6,14 @@
     @include row-flex();
     justify-content: center;
     margin-top: 2.25rem;
+    @include md(flex-direction, column);
 }
 
 .services__item.service {
     @include col();
     @include size(4);
     @include size-xl(6);
-    @include size-md(12);
+    @include size-md(12);    
     margin-bottom: 2rem;
     box-shadow: 0 0 70px #ccc;
     transition: .2s;

@@ -14,7 +14,6 @@
         order: 2;
     }
     height: 3000px;
-    @include md(flex-direction, row);
     @include md(height, auto !important);
 }
 

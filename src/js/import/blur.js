@@ -4,36 +4,37 @@ const blurOnHover = (selector, cb, execute = false) => {
         return
     }
     const items = document.querySelectorAll(selector)
-    
-    items.forEach(item => {
-        item.addEventListener('mouseenter', function() {
+    for (let i = 0; i < items.length-1; i++) {
+        items[i].addEventListener('mouseenter', function() {
             this.classList.add('hover')
             blurAll()
         })
 
-        item.addEventListener('mouseleave', function() {            
+        items[i].addEventListener('mouseleave', function() {            
             this.classList.remove('hover')
             unBlurAll()
             if (cb) {
                 cb()
             } 
         })
-    })
+    }
 
     const blurAll = () => {
-        document.querySelectorAll(selector).forEach(item => {
+        const items = document.querySelectorAll(selector)
+        for (let i = 0; i < items.length-1; i++) {
             if (selector === '.logos__image') {
-                item.classList.add('hover_js')
+                items[i].classList.add('hover_js')
             }
-            if (!item.classList.contains('hover')) {
-                item.classList.add(blur)
+            if (!items[i].classList.contains('hover')) {
+                items[i].classList.add(blur)
             }
-        })
+        }
     }
     const unBlurAll = () => {
-        document.querySelectorAll(selector).forEach(item => {
-            item.classList.remove(blur, 'hover_js')
-        })
+        const items = document.querySelectorAll(selector)
+        for (let i = 0; i < items.length-1; i++) {
+            items[i].classList.remove(blur, 'hover_js')
+        }
     }
 }
 
