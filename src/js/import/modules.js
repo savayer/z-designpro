@@ -4,6 +4,7 @@ import "%modules%/blog/blog";
 import "%modules%/process/process";
 import "%modules%/post/post";
 import "%modules%/footer/footer"
+import "%modules%/modal-contact/contact"
 import './blur'
 import './modal'
 import './aos'

@@ -4,12 +4,24 @@
     </header>
     <div class="contact__body">
         <div class="contact__form">
-            <div class="contact__group"><input type="text" name="name" placeholder="Name"></div>
-            <div class="contact__group"><input type="text" name="phone" placeholder="Tel #"></div>
-            <div class="contact__group"><input type="email" placeholder="Email"></div>
-            <div class="contact__group"><textarea type="text" name="message" placeholder="Message" rows="1"></textarea></div>
+            <div class="contact__group contact__group--1">
+                <input class="field" type="text" name="name">
+                <span>Name</span>
+            </div>
+            <div class="contact__group contact__group--2">
+                <input class="field" type="text" name="phone">
+                <span>Tel #</span>
+            </div>
+            <div class="contact__group contact__group--3">
+                <input class="field" type="email" name="email">
+                <span>Email</span>
+            </div>
+            <div class="contact__group contact__group--4">
+                <textarea class="field" type="text" name="message" rows="1"></textarea class="field">
+                <span>Message</span>
+            </div>
 
-            <div class="contact__button">                    
+            <div class="contact__button">
                 <button type="submit">
                     Send
                     <span></span>
@@ -19,10 +31,13 @@
         <div class="contact__message">
             Message sent successfully, Will get back to you soon.
         </div>
-    </div>
-    <div class="contact__phone">
-        <a href="tel:+972-54-631-99-77">+972-54-631-99-77
-            <span></span>
-        </a>
+        <div class="contact__phone">
+            <a href="tel:+972-54-631-99-77">+972-54-631-99-77
+                <span></span>
+            </a>
+            <a href="#">
+                <img src="../../../img/svg/wapp-white-phone.svg" alt="">
+            </a>
+        </div>
     </div>
 </div>

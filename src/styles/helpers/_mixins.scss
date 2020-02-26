@@ -10,14 +10,14 @@
     }
 }
 
-@mixin transitionPadding($height) {
+@mixin transitionTranslateY($height) {
     max-height: $height;
     overflow: hidden;
-    padding-top: $height/1.5;
+    transform: translateY($height/1.5);
     opacity: 0;
 }
 
-@mixin animatePaddingTop($height) {
+@mixin transitionPaddingTop($height) {
     max-height: $height;
     overflow: hidden;
     padding-top: $height/1.5;
