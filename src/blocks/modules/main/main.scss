@@ -1,6 +1,7 @@
 .nav_works {
     list-style: none;
-    @include row-flex();
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 1.5rem 5.5rem;
     background: #fff;
@@ -20,7 +21,6 @@
         flex-wrap: nowrap;
         white-space: nowrap;
         padding: 0 1rem 0.75rem 1rem;
-        width: 101%;
         justify-content: flex-start;
     }
     @include md-block {

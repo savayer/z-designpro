@@ -1,6 +1,7 @@
 .footer {
     background: #000;
     position: relative;
+    z-index: 100;
     overflow: hidden;
     min-height: 60px;
     display: flex;
@@ -52,11 +53,14 @@
     justify-content: center;
     height: 100%;
     align-items: center;
+    position: relative;
+    z-index: 100;
     @include md(flex-direction, column);
 }
 
 .copyright__name {
     margin-right: 1rem;
+    @include md(margin-right, 0);
     span {
         color: #fff;
         font-size: 1em;
@@ -75,11 +79,11 @@
     }
 }
 
-.copyright__fb {
+.footer__social {
     @include md(margin-top, 0.75rem);
     @include max(500) {
         position: absolute;
-        top: -20px;
+        top: -50px;
         margin-top: 0;
         left: 0;
         right: 0;
@@ -88,6 +92,13 @@
         img {
             width: 40px;
         }
+    }
+    img {
+        max-width: 30px
+    }
+    a {
+        display: inline-block;
+        margin-left: .75rem;        
     }
 }
 
@@ -100,4 +111,5 @@
     right: 0;
     top: 0;
     bottom: 0;
+    z-index: 1;
 }
