@@ -12,7 +12,7 @@
     transform: translateX(200%);
     padding: 1.5rem 0;
     box-shadow: -2rem 0 2.5rem #261e32;
-    z-index: 100;
+    z-index: 999999;
     overflow: auto;
     &.active {
         transform: translateX(0);

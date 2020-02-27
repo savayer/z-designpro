@@ -105,6 +105,12 @@
         animation: mainAnimate 4s .3s cubic-bezier(.31,.57,0,1) forwards;
     }
 }
+@-moz-document url-prefix() {
+    .grid_works.main-animate,
+    .grid_works.animate-items .grid_works__item {
+        filter: none !important;
+    }
+}
 .m-minus-top {
     margin-top: -1.875rem;
 }
