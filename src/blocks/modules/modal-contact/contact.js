@@ -1,4 +1,5 @@
 const inputs = document.querySelectorAll('.contact__group .field')
+const labels = document.querySelectorAll('.contact__group span')
 
 inputs.forEach(input => {
     input.addEventListener('focus', e => {
@@ -11,5 +12,11 @@ inputs.forEach(input => {
                 item.classList.remove('label-active')
             }
         })
+    })
+})
+
+labels.forEach(label => {
+    label.addEventListener('click', e => {
+        e.target.closest('.contact__group').children[0].focus();
     })
 })

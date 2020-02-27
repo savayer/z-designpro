@@ -59,9 +59,12 @@
     }
     @include xs(padding, 0.4em 0.6em);
     @include xs(margin, .4em);
-    @include max(350) {
-        margin: 0.4em .3em;
-        padding: .4em .5em;
+    @include max(380) {
+        margin: 0.4em .25em;
+    }
+    @include max(360) {
+        margin: 0.4em .2em;
+        padding: .4em .45em;
     }
     @include max(330) {
         margin: 0.4em .3em;
