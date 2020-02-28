@@ -101,9 +101,8 @@
     @include max(840) {
         display: block;
     }
-    @include max(500) {
-        width: auto;
-    }
+    @include max(500) { width: 30px; }
+    @include max(400) { width: 27px; }
     .bar1, .bar2, .bar3 {
         height: 4px;
         background-color: #000;

@@ -39,6 +39,11 @@ function setClickEventByModalToggleButton($button, modalSelector) {
                 $('.modal__logos').slick('unslick')
             }, 300)
         }
+        if (modalSelector === '.modal--contact') {
+            setTimeout(() => {
+                $('.dropline_img').attr('src', '')
+            }, 300)
+        }
     })
 
     function openModal(e) {
@@ -60,6 +65,11 @@ function setClickEventByModalToggleButton($button, modalSelector) {
                 })
             }, 500)
         }
+        if (modalSelector === '.modal--contact') {
+            const dataSrc = $('.dropline_img').data('src')
+            $('.dropline_img').attr('src', dataSrc)            
+        }
+
         let overlaySpeed, formSpeed;
     
         if (document.documentElement.clientWidth <= 700) {

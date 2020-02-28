@@ -27,12 +27,12 @@ body:not(.page_contact) {
     }
     .contact__button {
         @include min(501) {
-            @include transitionPaddingTop(90px);
+            @include transitionTranslateY(100px);
         }
     }
     .contact__phone {
         @include min(501) {
-            @include transitionPaddingTop(80px);
+            @include transitionTranslateY(80px);
         }
     }
 }
@@ -156,5 +156,10 @@ body:not(.page_contact) {
 .dropline {
     margin: auto;
     opacity: 0;
+    @include lg(width, 90%);
+}
+
+.dropline_img {
+    margin: auto;
     @include lg(width, 90%);
 }

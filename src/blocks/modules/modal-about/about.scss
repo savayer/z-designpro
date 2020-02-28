@@ -37,9 +37,9 @@
             transition: 1.5s .2s;
         }
         .contact__button, .contact__phone {
-            padding-top: 0;
+            transform: translateY(0);
             opacity: 1;
-            transition: 1.5s;
+            transition: 1.8s;
         }
         .modal__team_title, .modal__team_hr {
             padding-top: 0; 
