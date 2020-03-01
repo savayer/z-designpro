@@ -99,7 +99,7 @@ body:not(.page_contact) {
 .contact__group {
     margin: 2rem 0;
     position: relative;
-    span {
+    span.field_label {
         position: absolute;
         z-index: 2;
         left: 0;
