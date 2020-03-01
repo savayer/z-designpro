@@ -4,7 +4,7 @@ const blurOnHover = (selector, cb, execute = false) => {
         return
     }
     const items = document.querySelectorAll(selector)
-    for (let i = 0; i < items.length-1; i++) {
+    for (let i = 0; i < items.length; i++) {
         items[i].addEventListener('mouseenter', function() {
             this.classList.add('hover')
             blurAll()
@@ -21,7 +21,7 @@ const blurOnHover = (selector, cb, execute = false) => {
 
     const blurAll = () => {
         const items = document.querySelectorAll(selector)
-        for (let i = 0; i < items.length-1; i++) {
+        for (let i = 0; i < items.length; i++) {
             if (selector === '.logos__image') {
                 items[i].classList.add('hover_js')
             }
@@ -32,7 +32,7 @@ const blurOnHover = (selector, cb, execute = false) => {
     }
     const unBlurAll = () => {
         const items = document.querySelectorAll(selector)
-        for (let i = 0; i < items.length-1; i++) {
+        for (let i = 0; i < items.length; i++) {
             items[i].classList.remove(blur, 'hover_js')
         }
     }
