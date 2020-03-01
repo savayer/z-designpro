@@ -7,7 +7,7 @@ inputs.forEach(input => {
     })
     input.addEventListener('blur', e => {
         document.querySelectorAll('.label-active').forEach(item => {
-            const field = item.closest('.contact__group').children[0]
+            const field = item.closest('.contact__group').querySelector('.field')
             if (!field.value) {
                 item.classList.remove('label-active')
             }
