@@ -20,3 +20,9 @@ labels.forEach(label => {
         e.target.closest('.contact__group').querySelector('.field').focus();
     })
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    const contact = document.querySelector('div.contact')
+
+    contact.classList.add('animate-form')
+})

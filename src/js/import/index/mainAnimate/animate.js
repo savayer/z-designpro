@@ -5,9 +5,13 @@ window.addEventListener('load', () => {
     const preloader = document.querySelector('.preloader')
     preloader.classList.add('hide')    
 
+    if (document.referrer === document.location.href) {
+        sessionStorage.clear();
+    }
+
     const grid = document.querySelector('.grid_works')    
     if (grid) {        
-        if (!localStorage.getItem('animated')) {
+        if (!sessionStorage.getItem('animated')) {
             const masonry = grid.firstElementChild
             const clone = masonry.cloneNode(true)
             clone.classList.add('delete-after-animation')
@@ -22,7 +26,7 @@ window.addEventListener('load', () => {
                 //console.log('done', e)
                 document.querySelectorAll('.delete-after-animation').forEach(node => node.remove())
                 grid.classList.remove('main-animate')
-                localStorage.setItem('animated', true)
+                sessionStorage.setItem('animated', true)
             })
             grid.classList.add('main-animate')
         } else {        
