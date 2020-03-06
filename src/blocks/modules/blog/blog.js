@@ -1,3 +1,16 @@
+const defineHeightOfPosts = (posts) => {
+    let finalHeight = 0
+    posts.forEach(post => {
+        const heightPostWrapper = post.querySelector('.post__wrapper').clientHeight
+        const marginPost = parseInt(getComputedStyle(post).marginBottom)
+        const paddingPost = parseInt(getComputedStyle(post).paddingTop)
+                
+        finalHeight = finalHeight + heightPostWrapper + marginPost + paddingPost +10
+    })
+
+    return finalHeight
+}
+
 const calcHeight = () => {
     if (document.documentElement.clientWidth <= 768) {
         return
@@ -6,23 +19,15 @@ const calcHeight = () => {
     if (!blog) {
         return;
     }
-    const blogPostsCount = blog.childElementCount
-    const maxPostsInColumn = Math.ceil(blogPostsCount / 2)    
-    let postsOfTheColumn
-    let finalHeight = 0
-    
-    postsOfTheColumn = maxPostsInColumn % 2 === 0
-        ? document.querySelectorAll('.blog__post--column1')
-        : document.querySelectorAll('.blog__post--column2')    
-    
-    postsOfTheColumn.forEach(post => {
-        const heightPostWrapper = post.querySelector('.post__wrapper').clientHeight
-        const marginPost = parseInt(getComputedStyle(post).marginBottom)
-                
-        finalHeight = finalHeight + heightPostWrapper + marginPost
-    })
 
-    blog.style.height = finalHeight + 110 + 'px'
+    const columns1Height = defineHeightOfPosts(document.querySelectorAll('.blog__post--column1'))
+    const columns2Height = defineHeightOfPosts(document.querySelectorAll('.blog__post--column2'))
+
+    if (columns1Height > columns2Height) {
+        blog.style.height = columns1Height + 'px'
+    } else {
+        blog.style.height = columns2Height + 'px'
+    }
 }
 
 window.addEventListener('load', e => {
