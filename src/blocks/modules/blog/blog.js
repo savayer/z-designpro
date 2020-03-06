@@ -13,7 +13,7 @@ const calcHeight = () => {
     
     postsOfTheColumn = maxPostsInColumn % 2 === 0
         ? document.querySelectorAll('.blog__post--column1')
-        : postsOfTheColumn = document.querySelectorAll('.blog__post--column2')    
+        : document.querySelectorAll('.blog__post--column2')    
     
     postsOfTheColumn.forEach(post => {
         const heightPostWrapper = post.querySelector('.post__wrapper').clientHeight
@@ -22,7 +22,7 @@ const calcHeight = () => {
         finalHeight = finalHeight + heightPostWrapper + marginPost
     })
 
-    blog.style.height = finalHeight + 50 + 'px'
+    blog.style.height = finalHeight + 110 + 'px'
 }
 
 window.addEventListener('load', e => {

@@ -22,7 +22,8 @@ labels.forEach(label => {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-    const contact = document.querySelector('div.contact')
-
-    contact.classList.add('animate-form')
+    const contact = document.querySelector('div.contact--section')
+    if (contact) {
+        contact.classList.add('animate-form')
+    }
 })
