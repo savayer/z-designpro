@@ -11,6 +11,11 @@
 }
 
 .single_post__wrapper {
+    &.fadein {
+        opacity: 1;
+        transition: .7s .4s linear;
+    }
+    opacity: 0;
     background: #fff;
     box-shadow: 0 50px 100px 40px #ccc;
     position: relative;

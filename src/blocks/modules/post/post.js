@@ -2,6 +2,7 @@ const wrapper = document.querySelector('.single_post__wrapper')
 const closeButton = document.querySelector('.single_post__close')
 
 if (wrapper) {
+    wrapper.classList.add('fadein')
     const aside = document.querySelector('.single_post__aside');
     const sticky = aside.offsetTop;
 

@@ -35,6 +35,9 @@ function setClickEventByModalToggleButton($button, modalSelector) {
         animateOverlay($modalForm, 350, '', true)
         document.body.classList.remove('overflow-hidden');
         if (modalSelector === '.modal--about') {
+            document.querySelectorAll('.about__content').forEach(item => item.classList.remove('fadein'))
+            document.querySelectorAll('.about__buttons').forEach(item => item.classList.remove('fadein'))
+            
             setTimeout(() => {
                 $('.modal__logos').slick('unslick')
             }, 300)
@@ -50,6 +53,8 @@ function setClickEventByModalToggleButton($button, modalSelector) {
         e.preventDefault()
         $modal.classList.add('showed')
         if (modalSelector === '.modal--about') {
+            document.querySelectorAll('.about__content').forEach(item => item.classList.add('fadein'))
+            document.querySelectorAll('.about__buttons').forEach(item => item.classList.add('fadein'))
             setTimeout(function() {
                 $('.modal__logos').slick({
                     slidesToScroll: 1,
@@ -108,3 +113,12 @@ function setClickEventByModalToggleButton($button, modalSelector) {
 }
 setClickEventByModalToggleButton(document.querySelector('[data-modal="about"]'), '.modal--about')
 setClickEventByModalToggleButton(document.querySelector('[data-modal="contact"]'), '.modal--contact')
+
+/*** */
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.documentElement.clientWidth <= 500) {
+        document.querySelectorAll('.about__content').forEach(item => item.classList.add('fadein'))
+        document.querySelectorAll('.about__buttons').forEach(item => item.classList.add('fadein'))
+    }
+})
