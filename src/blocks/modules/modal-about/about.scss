@@ -262,7 +262,9 @@
     &.fadein {
         transition: .7s .7s linear;
         opacity: 1;
+        transform: translateY(0);
     }
+    transform: translateY(20px);
     opacity: 0;    
     margin-top: 2rem;
     * {
@@ -278,9 +280,11 @@
 
 .about__buttons {
     &.fadein {
-        transition: .7s 1s linear;
+        transition: .7s 1.3s linear;
         opacity: 1;
+        transform: translateY(0);
     }
+    transform: translateY(12px);
     opacity: 0;
     display: flex;
     justify-content: flex-start;
