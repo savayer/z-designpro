@@ -14,7 +14,7 @@
     &.fadein {
         opacity: 1;
         transition: .7s .4s linear;
-        transform: translateY(0);
+        transform: none;
     }
     transform: translateY(20px);
     opacity: 0;
