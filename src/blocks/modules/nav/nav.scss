@@ -141,15 +141,34 @@
         }
     }
 
-    &:hover {
+    &.mouseover {
+        .bar1, .bar2, .bar3 {
+            margin-right: 2px;
+            background-color: $active;
+        }
         .bar1 {
-            animation: hover_on_bar .15s linear forwards
+            transition: .15s linear;
         }
         .bar2 {
-            animation: hover_on_bar .15s linear .15s forwards
+            transition: .15s linear .15s;
         }
         .bar3 {
-            animation: hover_on_bar .15s linear .3s forwards
+            transition: .15s linear .3s;
+        }
+    }
+    &.mouseout {
+        .bar1, .bar2, .bar3 {
+            margin-right: 0px;
+            background-color: #000;
+        }
+        .bar3 {
+            transition: .15s linear;
+        }
+        .bar2 {
+            transition: .15s linear .15s;
+        }
+        .bar1 {
+            transition: .15s linear .3s;
         }
     }
 }
