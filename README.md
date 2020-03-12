@@ -1,6 +1,6 @@
 # z-designpro
 
-[demo](http://z.savayer.me)
+[demo](http://zdesign.savayer.me)
 
 To install dependencies
 
