@@ -86,7 +86,7 @@
     font-family: 'Futura';
     &:before {
         content: '';
-        background: url(../../../img/svg/date.svg) center/contain no-repeat;
+        background: url(../img/svg/date.svg) center/contain no-repeat;
         width: 18px;
         height: 15px;
         display: inline-block;
@@ -107,7 +107,7 @@
     span {
         display: inline-block;
         vertical-align: middle;
-        background: url(../../../img/svg/red_arrow_right.svg) center/contain no-repeat;
+        background: url(../img/svg/red_arrow_right.svg) center/contain no-repeat;
         width: 25px;
         height: 17px;
         margin-left: 2px;
